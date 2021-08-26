@@ -1,6 +1,68 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Test Header</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-<h1 class="display-4"> Home Page Created</h1>
+<div class="container shadow-sm">
+    <div class="row hero-section">
+        <div class="col-12 col-md-5 my-auto">
+            <div class="row text=center mt-5 mx-2">
+                <h1 class="logo-font text-black text-center mt-5">Express order your Espresso's</h1>
+            </div>
+            <div class="row text-center mt-5 mx-3">
+                <p>Does the excitement of the coffee cart fade when you see the line that’s formed??</p>
+            </div>
+            <div class="row text-center mt-1 mx-3">
+                <p>EspressOrders is the convenient way to order from your favourite coffee cart and have you order ready when you are!</p>
+            </div>
+            <div class="row text-center my-5 mx-4 p-2">
+                <div class="col-6">
+                    <h6>
+                        <a href="" class="park-cart-button btn rounded-0">Order Now Park Cart</a>
+                    </h6>
+                </div>
+                <div class="col-6">
+                    <h6>
+                        <a href="" class="park-cart-button btn rounded-0">Order Now Hospital Cart</a>
+                    </h6>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-12 col-md-7 text-center my-auto">
+            <h1>img</h1>
+        </div>
+    </div>
+    <div class="row social-proof-section">
+        <div class="col-12">
+            <div class="row text-center m-3">
+                <h4>"Some of the finest coffee available, and it comes right to the office door!"</h4></div>
+            <div class="row text-center m-3">
+                <p>Icon</p>
+            </div>
+            <div class="row text-center m-3">
+                <h6>Mr A N Onymous</h6>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock%}
+
+{% block page_footer %}
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1>Test Footer</h1>
+        </div>
+    </div>
+</div>
+{% endblock %}
