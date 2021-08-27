@@ -41,7 +41,7 @@
 </head>
 
 <body>
-    <header class="container-fluid fixed-top">
+    <header class="container-fluid">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="row">
                 <!-- Brand logo -->
@@ -145,6 +145,24 @@
     {% block page_footer %}
     {% endblock %}
     
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 my-auto bg-black">
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-white"><i class="fab fa-facebook"></i></a></li>
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-white"><i class="fab fa-twitter"></i></a></li>
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-white"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <ul class="nav justify-content-center border-bottom pb-3 my-auto">
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Hot Drinks</a></li>
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Cold Drinks</a></li>
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Iced Drinks</a></li>
+            <li class="nav-item"><a href="#" class="nav-link brand-font px-2 ms-2 me-2 d-none d-lg-block"><h2>espressOrders</h2></a></li>
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Orders</a></li>
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Contact Us</a></li>
+        </ul>
+        <p class="text-center text-muted m-2">© 2021 Andrew Boyd</p>
+    </footer>
+
     {% block postloadjs %}
     {% endblock %}
          
