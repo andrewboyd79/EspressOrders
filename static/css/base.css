@@ -10,8 +10,7 @@ body {
     font-weight: 200;
     color: #151515;
     height: calc(100vh - 164px);
-    background: url('media/matt-hoffman-YdEpiHpwhyM-unsplash.jpg') no-repeat center center fixed;
-	background-size: cover;  
+    
 }
 
 .brand-font {
@@ -24,14 +23,19 @@ body {
 .dark-button {
     background-color: #151515;
     color: #ffffff;
+    min-width: 210px;
 }
 
 .light-button {
     outline: #151515 1px solid;
+    min-width: 210px;
 }
 
 /* Home Page */
 
+.hero-img{
+    max-height: 450px;
+}
 
 /* --------------------------------- Media queries */
 
