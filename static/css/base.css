@@ -1,3 +1,5 @@
+/* General Styling */
+
 html {
     height: 100%;
 }
@@ -7,15 +9,29 @@ body {
     font-style: normal;
     font-weight: 200;
     color: #151515;
-    height: calc(100vh - 164px);  
+    height: calc(100vh - 164px);
+    background: url('media/matt-hoffman-YdEpiHpwhyM-unsplash.jpg') no-repeat center center fixed;
+	background-size: cover;  
 }
 
-.logo-font {
+.brand-font {
     font-family: 'Poiret One', cursive;
     font-style: normal;
     font-weight: 200;
     color: #151515;
 }
+
+.dark-button {
+    background-color: #151515;
+    color: #ffffff;
+}
+
+.light-button {
+    outline: #151515 1px solid;
+}
+
+/* Home Page */
+
 
 /* --------------------------------- Media queries */
 
