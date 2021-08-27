@@ -37,6 +37,10 @@ body {
     max-height: 450px;
 }
 
+.social-proof-section{
+    background-color: lightgray;
+}
+
 /* --------------------------------- Media queries */
 
 /* Slightly larger container on xl screens */
