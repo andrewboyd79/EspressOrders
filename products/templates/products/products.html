@@ -5,11 +5,32 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-12">
-            {{ products}}
+        <div class="col-12 text-center text-uppercase brand-font mt-5">
+            <h2>Drinks</h2>
         </div>
+    </div>
+    <div class="row">
+        {% for type in types %}
+        {% for product in products %}
+        {% if type.name == product.type %}
+        <div class="col-12 text-center text-uppercase brand-font mt-5">
+            {{ type.name }} 
+            {{product.type }} 
+        </div>
+        <div class="col-10 offset-1">
+            <div class="row">
+            </div>
+            <div class="row">               
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
+    </div>
+   
+    <div class="row">
     </div>
 </div>
 {% endblock%}
