@@ -18,17 +18,13 @@
                 <p>EspressOrders is the convenient way to order from your favourite coffee cart and have you order ready when you are!</p>
             </div>
             <div class="row text-center my-5 mx-4 p-2">
+                {% for locations in location %}
                 <div class="col-6">
                     <h6>
-                        <a href="" class="park-cart-btn dark-button btn rounded-3">Order Now Park Cart</a>
+                        <a href="" class="park-cart-btn dark-button btn rounded-3">Order Now {{ locations.name }}</a>
                     </h6>
                 </div>
-                <div class="col-6">
-                    <h6>
-                        <a href="" class="hospital-cart-btn light-button btn rounded-3">Order Now Hospital Cart</a>
-                    </h6>
-                </div>
-                
+                {% endfor %}
             </div>
         </div>
         <div class="col-12 col-md-7 text-center my-auto">
