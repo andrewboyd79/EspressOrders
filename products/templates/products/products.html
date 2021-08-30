@@ -15,7 +15,9 @@
         {% for type in types %}
         
         <div class="col-12 text-center text-uppercase brand-font my-3">
-         <h3>{{ type.name }}</h3>   
+            {% if not search %}
+            <h3>{{ type.name }}</h3>   
+            {% endif %}
         </div>
         <div class="col-10 offset-1">
             <div class="row">
@@ -25,6 +27,9 @@
                 {% if type == product.type %}                   
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
                     <div class="card h-100">
+                        {% if search %}
+                        <h4 class="brand-font mt-3 ms-1">{{type.name}}</h4>
+                        {% endif %}
                         {% if product.image %}
                             <a href="{% url 'product_detail' product.id %}">
                                 <img src="{{MEDIA_URL}}{{ product.image }}" class="card-img-top" alt="...">
@@ -49,6 +54,7 @@
     </div>
    
     <div class="row">
+        
     </div>
 </div>
 {% endblock%}

@@ -6,6 +6,7 @@ from .models import Product, Category, Type
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         'image',
         'name',
         'brief_description',
@@ -14,7 +15,7 @@ class ProductAdmin(admin.ModelAdmin):
         'type'
     )
 
-    ordering = ('name',)
+    ordering = ('id',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
