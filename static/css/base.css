@@ -41,6 +41,10 @@ body {
     background-color: lightgray;
 }
 
+.product-decription{
+    min-height: 50px;
+}
+
 /* --------------------------------- Media queries */
 
 /* Slightly larger container on xl screens */
