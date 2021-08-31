@@ -17,16 +17,16 @@ def all_products(request):
     query = None
 
     if request.GET:
-        if 'type' in request.GET:
-            types = request.GET['type'].split(',')
-            products = products.filter(type__name__in=types)
-            types = Type.objects.filter(name__in=types)
-
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-            types = Type.objects.all()
+            types = Type.objects.filter(category__in=categories)
+
+        if 'type' in request.GET:
+            types = request.GET['type'].split(',')
+            products = products.filter(type__name__in=types)
+            types = Type.objects.filter(name__in=types)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -39,6 +39,8 @@ def all_products(request):
                 Q(description__icontains=query)
 
             products = products.filter(queries)
+            types = Type.objects.all()
+
     else:
         types = Type.objects.all()
 

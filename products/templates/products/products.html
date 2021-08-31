@@ -27,22 +27,22 @@
                 {% if type == product.type %}                   
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
                     <div class="card h-100">
-                        {% if search %}
-                        <h4 class="brand-font mt-3 ms-1">{{type.name}}</h4>
-                        {% endif %}
                         {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{MEDIA_URL}}{{ product.image }}" class="card-img-top" alt="...">
-                            </a>
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{MEDIA_URL}}{{ product.image }}" class="card-img-top" alt="...">
+                        </a>
                         {% else %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{MEDIA_URL}}Asset 270.png" class="card-img-top w-25 mx-auto" alt="...">
-                            </a>
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{MEDIA_URL}}Asset 270.png" class="card-img-top w-25 mx-auto" alt="...">
+                        </a>
                         {% endif %}
-                            <div class="card-body">
-                                <h4 class="brand-font text-uppercase">{{product.name }}</h4>
-                                <p class="card-text product-decription pt-2">{{ product.brief_description }}</p>
-                                <p class="card-text pt-2">From £{{ product.starting_price }}</p>
+                        <div class="card-body">
+                            <h4 class="brand-font text-uppercase">{{product.name }}</h4>
+                            <p class="card-text product-decription pt-2">{{ product.brief_description }}</p>
+                            <p class="card-text pt-2">From £{{ product.starting_price }}</p>
+                            {% if search %}
+                            <h6 class="brand-font text-muted pt-2">{{type.name}}</h6>
+                            {% endif %}
                             </div>
                         </div>
                 </div>
@@ -50,14 +50,29 @@
             {% endfor %}
             </div>
         </div>
-    {% endfor %}
+        {% endfor %}
+        {% if search %}
+        <a class="text-end btt-link text-black">
+                <div class="brand-font text-black pe-5">
+                <h6>Back to top</h6>
+            </a>	
+        </div>
+        {% endif %}
     </div>
    
     <div class="row">
-        
     </div>
 </div>
 {% endblock%}
 
 {% block page_footer %}
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
 {% endblock %}
