@@ -12,36 +12,36 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="hot-drinks-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hot Drinks
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Coffee</a>
-                <a href="" class="dropdown-item">Tea</a>
-                <a href="" class="dropdown-item">Speciality</a>
-                <a href="" class="dropdown-item">All Hot Drinks</a>
+            <div class="dropdown-menu border-0" aria-labelledby="hot-drinks-link">
+                <a href="{% url 'products'%}?type=Coffee" class="dropdown-item">Coffee</a>
+                <a href="{% url 'products'%}?type=Tea" class="dropdown-item">Tea</a>
+                <a href="{% url 'products'%}?type=Speciality Coffee" class="dropdown-item">Speciality Coffee</a>
+                <a href="{% url 'products'%}?category=Hot Drinks" class="dropdown-item">All Hot Drinks</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="cold-drinks-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Cold Drinks
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Smoothies</a>
-                <a href="" class="dropdown-item">Shakes</a>
-                <a href="" class="dropdown-item">Soft Drinks</a>
-                <a href="" class="dropdown-item">All Cold Drinks</a>
+            <div class="dropdown-menu border-0" aria-labelledby="cold-drinks-link">
+                <a href="{% url 'products'%}?type=Smoothies" class="dropdown-item">Smoothies</a>
+                <a href="{% url 'products'%}?type=Shakes" class="dropdown-item">Shakes</a>
+                <a href="{% url 'products'%}?type=Soft Drinks" class="dropdown-item">Soft Drinks</a>
+                <a href="{% url 'products'%}?category=Cold Drinks" class="dropdown-item">All Cold Drinks</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="iced-drinks-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Iced Drinks
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Iced Coffee</a>
-                <a href="" class="dropdown-item">All Iced Drinks</a>
+            <div class="dropdown-menu border-0" aria-labelledby="iced-drinks-link">
+                <a href="{% url 'products'%}?type=Iced Coffee" class="dropdown-item">Iced Coffee</a>
+                <a href="{% url 'products'%}?category=Iced Drinks" class="dropdown-item">All Iced Drinks</a>
             </div>
         </li>
     </ul>

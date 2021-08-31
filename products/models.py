@@ -15,6 +15,8 @@ class Category(models.Model):
 class Type(models.Model):
 
     name = models.CharField(max_length=254)
+    category = models.ForeignKey('Category', null=True,
+                                 on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
