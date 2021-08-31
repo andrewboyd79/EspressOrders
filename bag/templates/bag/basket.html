@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="col-12 brand-font text-center text-uppercase mt-5">
+        <div class="row">
+        <h2>Basket</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if basket_items %}
+            <div>
+
+            </div>
+            {% else %}
+            <h4 class="brand-font text-uppercase my-5"> Wait a minute - you've no espresso in your order!</h4>
+            <a href="{% url 'products' %}" class="btn rounded-3">
+                <span class="icon">
+                    <i class="far fa-hand-point-left me-3"></i>
+                </span>
+                <span class="text-uppercase">Back to the drinks</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block page_footer %}
+{% endblock %}
