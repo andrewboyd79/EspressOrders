@@ -98,8 +98,8 @@
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-basket"></i></div>
                                     <p class="my-0"> Basket:
-                                        {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                        {% if basket_total %}
+                                        ${{ basket_total|floatformat:2 }}
                                         {% else %}
                                         £0.00
                                         {% endif %}
