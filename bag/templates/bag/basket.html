@@ -12,11 +12,27 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col my-auto">
             {% if basket_items %}
             <div>
-
-            </div>
+                <h6 class="brand-font mb-3">
+                    For collection at :
+                </h6>
+                <h4 class="text-uppercase brand-font">
+                    Order Details
+                </h4>
+                <hr>
+                {% for items in basket_items %}
+                <h5 class="mt-5 ms-3 brand-font">
+                    {{items.quantity}}x {{items.product}} (at £ {{items.starting_price}} each)
+                    <span class="ms-5">£ {{ items.item_total }}</span>
+                </h5>
+                
+                {% endfor %}
+                <hr class="mt-5">
+                <h5>
+                    <span class="text-uppercase brand-font me-5">Total: </span> : £ {{basket_total}}
+                </h5>
             {% else %}
             <h4 class="brand-font text-uppercase my-5"> Wait a minute - you've no espresso in your order!</h4>
             <a href="{% url 'products' %}" class="btn rounded-3">
