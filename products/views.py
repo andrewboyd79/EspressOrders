@@ -15,6 +15,7 @@ def all_products(request):
     categories = None
     types = None
     query = None
+    location = None
 
     if request.GET:
         if 'category' in request.GET:
@@ -28,6 +29,11 @@ def all_products(request):
             products = products.filter(type__name__in=types)
             types = Type.objects.filter(name__in=types)
 
+        if 'location' in request.GET:
+            location = request.GET['location']
+            types = Type.objects.all()
+            request.session['selected_location'] = location
+            
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -49,6 +55,7 @@ def all_products(request):
         'categories': categories,
         'types': types,
         'search': query,
+        'location': location,
     }
 
     return render(request, 'products/products.html', context)
@@ -60,9 +67,12 @@ def product_detail(request, product_id):
     """
 
     product = get_object_or_404(Product, pk=product_id)
+    ordering_location = request.session['selected_location']
+    print(ordering_location)
 
     context = {
         'product': product,
+        'ordering_location': ordering_location,
     }
 
     return render(request, 'products/product_detail.html', context)
