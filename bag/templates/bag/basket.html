@@ -34,6 +34,11 @@
                         <td>
                             <h6 class="text-end">£ {{items.item_total}}</h6>
                         </td>     
+                        <td>
+                            <a class="remove-item text-danger" id="remove_{{items.item_id}}" data-size="{{ items.item_size }}">
+                                <p class="text-end brand-font"><i class="far fa-times-circle"></i></p>
+                            </a>                            
+                        </td>     
                     </tr>
                     {% endfor %}
                     <tr class="basket_total">
@@ -61,5 +66,24 @@
 </div>
 {% endblock%}
 
-{% block page_footer %}
+{% block postloadjs %}
+{{ block.super }}
+
+
+<script type="text/javascript">
+
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+</script>
 {% endblock %}
