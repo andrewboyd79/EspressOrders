@@ -12,7 +12,8 @@ class ProductAdmin(admin.ModelAdmin):
         'brief_description',
         'starting_price',
         'category',
-        'type'
+        'type',
+        'has_attributes'
     )
 
     ordering = ('id',)
