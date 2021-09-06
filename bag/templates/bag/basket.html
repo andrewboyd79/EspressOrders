@@ -24,7 +24,7 @@
                 <hr>
                 {% for items in basket_items %}
                 <h5 class="mt-5 ms-3 brand-font">
-                    {{items.quantity}}x {{items.product}} (at £ {{items.starting_price}} each)
+                    {{items.quantity}}x {{items.item_size}}{{items.product}} (at £ {{items.starting_price}} each)
                     <span class="ms-5">£ {{ items.item_total }}</span>
                 </h5>              
                 {% endfor %}
