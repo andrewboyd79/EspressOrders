@@ -48,6 +48,22 @@ body {
 .basket_total{
     border-top: 1px solid #151515;
 }
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 5px;
+}
+
 /* --------------------------------- Media queries */
 
 /* Slightly larger container on xl screens */
