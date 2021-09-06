@@ -15,18 +15,21 @@ def basket_contents(request):
         item_total = quantity * product.starting_price
         basket_total += item_total
         product_count += quantity
+
         basket_items.append({
             'item_id': item_id,
             'quantity': quantity,
             'product': product,
             'starting_price': starting_price,
             'item_total': item_total,
+
         })
 
     context = {
         'basket_items': basket_items,
         'basket_total': basket_total,
         'product_count': product_count,
+
     }
 
     return context
