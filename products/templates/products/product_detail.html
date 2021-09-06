@@ -94,5 +94,7 @@
     </div>
 {% endblock%}
 
-{% block page_footer %}
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_selector.html' %}
 {% endblock %}
