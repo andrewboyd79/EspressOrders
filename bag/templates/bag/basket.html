@@ -16,7 +16,7 @@
             {% if basket_items %}
             <div>
                 <h6 class="brand-font mb-3">
-                    For collection at :
+                    For collection at : {% if location %} {{ location }} {% else %} N/A {% endif %}
                 </h6>
                 <h4 class="text-uppercase brand-font">
                     Order Details
@@ -26,8 +26,7 @@
                 <h5 class="mt-5 ms-3 brand-font">
                     {{items.quantity}}x {{items.product}} (at £ {{items.starting_price}} each)
                     <span class="ms-5">£ {{ items.item_total }}</span>
-                </h5>
-                
+                </h5>              
                 {% endfor %}
                 <hr class="mt-5">
                 <h5>
