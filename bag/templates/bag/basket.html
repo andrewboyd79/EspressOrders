@@ -22,16 +22,31 @@
                     Order Details
                 </h4>
                 <hr>
-                {% for items in basket_items %}
-                <h5 class="mt-5 ms-3 brand-font">
-                    {{items.quantity}}x {{items.item_size}}{{items.product}} (at £ {{items.starting_price}} each)
-                    <span class="ms-5">£ {{ items.item_total }}</span>
-                </h5>              
-                {% endfor %}
-                <hr class="mt-5">
-                <h5>
-                    <span class="text-uppercase brand-font me-5">Total: </span> : £ {{basket_total}}
-                </h5>
+                <table class="table table-sm table-borderless w-100">
+                    {% for items in basket_items%}
+                    <tr class="basket_contents">
+                        <td class="py-1">
+                            <h5 class="my-3 brand-font">{{ items.quantity }}x {{items.product}}</h5>
+                            {% if items.item_size %}
+                            <p class="ms-3"> - {{ items.item_size }}</p>
+                            {% endif %}
+                        </td>     
+                        <td>
+                            <h6 class="text-end">£ {{items.item_total}}</h6>
+                        </td>     
+                    </tr>
+                    {% endfor %}
+                    <tr class="basket_total">
+                        <td class="py-5">
+                            <h5 class="text-uppercase brand-font me-5">
+                            Total:
+                        </h5>
+                        </td>
+                        <td class="py-5">
+                            <h5 class="text-end">£ {{basket_total}}</h5>
+                        </td>                         
+                    </tr>
+                </table>                          
             {% else %}
             <h4 class="brand-font text-uppercase my-5"> Wait a minute - you've no espresso in your order!</h4>
             <a href="{% url 'products' %}" class="btn rounded-3">
