@@ -33,7 +33,7 @@ def all_products(request):
             location = request.GET['location']
             types = Type.objects.all()
             request.session['selected_location'] = location
-            
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -68,7 +68,6 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     ordering_location = request.session['selected_location']
-    print(ordering_location)
 
     context = {
         'product': product,
