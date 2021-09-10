@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="container">
-    <div class="col-12 brand-font text-center text-uppercase mt-5">
+    <div class="col-12 brand-font text-center mt-5">
         <div class="row">
         <h2>Basket</h2>
         </div>
@@ -18,7 +18,7 @@
                 <h6 class="brand-font mb-3">
                     For collection at : {% if location %} {{ location }} {% else %} N/A {% endif %}
                 </h6>
-                <h4 class="text-uppercase brand-font">
+                <h4 class="brand-font">
                     Order Details
                 </h4>
                 <hr>
@@ -43,16 +43,18 @@
                     {% endfor %}
                     <tr class="basket_total">
                         <td class="py-5">
-                            <h5 class="text-uppercase brand-font me-5">
+                            <h4 class="brand-font me-5">
                             Total:
-                        </h5>
+                            </h4>
                         </td>
                         <td class="py-5">
                             <h5 class="text-end">£ {{basket_total}}</h5>
                         </td>
-                        <td class="py-5">
+                    </tr>
+                    <tr>
+                        <td>
                             <a href="{% url 'checkout' %}">
-                                <h6 class="brand-font text-end">Checkout</h6>
+                                <h6 class="brand-font">Checkout</h6>
                             </a>
                         </td>                         
                     </tr>

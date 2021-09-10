@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 text-center text-uppercase brand-font mt-5">
+        <div class="col-12 text-center brand-font mt-5">
             <h2>Drinks {% if location %}
                 <span><h6 class="mt-2">@ the {{location}}</h6></span>  
                  {% endif %}</h2>
@@ -16,7 +16,7 @@
     <div class="row">
         {% for type in types %}
         
-        <div class="col-12 text-center text-uppercase brand-font my-3">
+        <div class="col-12 text-center brand-font my-3">
             {% if not search %}
             <h3>{{ type.name }}</h3>   
             {% endif %}
@@ -39,7 +39,7 @@
                         </a>
                         {% endif %}
                         <div class="card-body">
-                            <h4 class="brand-font text-uppercase">{{product.name }}</h4>
+                            <h4 class="brand-font">{{product.name }}</h4>
                             <p class="card-text product-decription pt-2">{{ product.brief_description }}</p>
                             <p class="card-text pt-2">From £{{ product.starting_price }}</p>
                             {% if search %}
