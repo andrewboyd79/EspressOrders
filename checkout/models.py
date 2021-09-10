@@ -31,7 +31,7 @@ class Order(models.Model):
         accounting for delivery costs.
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))\
-            ['lineitem_total__sum']
+            ['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -69,5 +69,5 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Product {self.product.name} on order \
+        return f'{self.product.name} on order \
                 {self.order.order_number}'

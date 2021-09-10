@@ -5,7 +5,7 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('full_name', 'email', 'phone_number',)
+        fields = ('full_name', 'email', 'phone_number','collection_location')
 
     def __init__(self, *args, **kwargs):
         """
@@ -17,6 +17,7 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
+            'collection_location':'Collection Location'
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True

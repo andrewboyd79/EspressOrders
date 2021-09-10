@@ -89,7 +89,7 @@
                         <h4 class="brand-font">Collection Details</h4>
                         <p class="text-muted">Your order will be available for collection from the following location:</p>
                         <legend class="fieldset-label small text-black px-2 w-auto"></legend>
-                        {{ order_form.full_name | as_crispy_field }} - will house collection location
+                         {{ order_form.collection_location | as_crispy_field }}
 
                     </fieldset>
                     <fieldset class="rounded-3 mb-3">
@@ -118,6 +118,13 @@
                 </form>
             </div>
         </div>
+    </div>
+    <div id="loading-overlay">
+        <h1 class="text-light logo-font loading-spinner">
+            <span class="icon">
+                <i class="fas fa-3x fa-coffee fa-spin"></i>
+            </span>
+        </h1>
     </div>
 {% endblock %}
 
