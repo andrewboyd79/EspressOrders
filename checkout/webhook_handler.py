@@ -1,9 +1,11 @@
 #  Code taken from CI Boutique Ado walkthrough project
 
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 
 from .models import Order, OrderLineItem
 from products.models import Product
+from home.models import Location
 
 import json
 import time
@@ -31,6 +33,10 @@ class StripeWH_Handler:
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
+        collection_info = intent.metadata.collection_location
+        collection_location = get_object_or_404(Location, pk=collection_info)
+
+        print(collection_location)
 
         billing_details = intent.charges.data[0].billing_details
         order_total = round(intent.charges.data[0].amount / 100, 2)
@@ -43,7 +49,7 @@ class StripeWH_Handler:
                     full_name__iexact=billing_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=billing_details.phone,
-                    
+                    collection_location=collection_location,
                     order_total=order_total,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -64,7 +70,7 @@ class StripeWH_Handler:
                     full_name=billing_details.name,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
-                    collection_location='1',
+                    collection_location=collection_location,
                     order_total=order_total,
                     original_bag=bag,
                     stripe_pid=pid,

@@ -54,7 +54,8 @@ form.addEventListener('submit', function(ev) {
     $('#loading-overlay').fadeToggle(100);
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
-    
+    var collectionInfo = $('select[name="collection_location"]').val();
+    console.log(collectionInfo)
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
    
@@ -62,7 +63,9 @@ form.addEventListener('submit', function(ev) {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': client_secret,
         'save_info': saveInfo,
+        'collection_location': collectionInfo,
     };
+    console.log(postData)
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function () {

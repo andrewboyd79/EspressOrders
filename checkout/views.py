@@ -21,6 +21,7 @@ def cache_checkout_data(request):
             'bag': json.dumps(request.session.get('bag', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
+            'collection_location': request.POST.get('collection_location')
         })
         return HttpResponse(status=200)
     except Exception as e:
@@ -132,3 +133,4 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+    
