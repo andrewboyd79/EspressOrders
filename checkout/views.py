@@ -42,9 +42,14 @@ def checkout(request):
             'phone_number': request.POST['phone_number'],
             'collection_location': request.POST['collection_location']
         }
+        
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -115,8 +120,7 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Your order was successfully processed! \
-        Your order number is {order_number} and will be available \
-        for collection shortly.\
+        Your order will be available for collection shortly.\
         A confirmation email will be sent to {order.email}.')
 
     if 'bag' in request.session:
