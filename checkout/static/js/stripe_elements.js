@@ -53,9 +53,10 @@ form.addEventListener('submit', function(ev) {
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
 
+    // Gets data from form
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     var collectionInfo = $('select[name="collection_location"]').val();
-    console.log(collectionInfo)
+
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
    
@@ -65,7 +66,6 @@ form.addEventListener('submit', function(ev) {
         'save_info': saveInfo,
         'collection_location': collectionInfo,
     };
-    console.log(postData)
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function () {
@@ -93,7 +93,7 @@ form.addEventListener('submit', function(ev) {
                 $('#submit-button').attr('disabled', false);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
-                   // form.submit();
+                   form.submit();
                 }
             }
         });

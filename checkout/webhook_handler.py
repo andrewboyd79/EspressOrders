@@ -35,9 +35,6 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
         collection_info = intent.metadata.collection_location
         collection_location = get_object_or_404(Location, pk=collection_info)
-
-        print(collection_location)
-
         billing_details = intent.charges.data[0].billing_details
         order_total = round(intent.charges.data[0].amount / 100, 2)
 
@@ -58,7 +55,7 @@ class StripeWH_Handler:
                 break
             except Order.DoesNotExist:
                 attempts += 1
-                time.sleep(1)  
+                time.sleep(1)
         if order_exists:
             return HttpResponse(
                     content=f'Webhook received: {event["type"]} | Success: There is a verified order already in database', status=200)
