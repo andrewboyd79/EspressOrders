@@ -83,7 +83,7 @@
                                 {% if request.user.is_superuser %}
                                 <a href="" class="dropdown-item"><i class="fas fa-wrench m-2"></i>Product Management</a>
                                 {% endif %}
-                                <a href="" class="dropdown-item"><i class="fas fa-id-card m-2"></i>My Profile</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item"><i class="fas fa-id-card m-2"></i>My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item"><i class="fas fa-sign-out-alt m-2"></i>Logout</a>
                                 {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item"><i class="fas fa-user-plus m-2"></i>Register</a>

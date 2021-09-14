@@ -2,17 +2,21 @@ from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from django.contrib import messages
 
 from products.models import Product
-# Create your views here.
 
 
 def view_bag(request):
-    """ A view that renders the bag contents page """
+    """
+    A view that renders the bag contents page
+    """
 
     return render(request, 'bag/basket.html')
 
 
 def add_to_bag(request, item_id):
-    """ Adds number of a product to the bag """
+    """
+    Adds number of a product to the bag
+    """
+
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -48,7 +52,9 @@ def add_to_bag(request, item_id):
 
 
 def remove_from_bag(request, item_id):
-    """ Remove the item from the shopping bag """
+    """
+    Remove the item from the shopping bag
+    """
 
     try:
         product = get_object_or_404(Product, pk=item_id)

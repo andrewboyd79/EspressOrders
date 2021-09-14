@@ -64,6 +64,19 @@ body {
     height: 5px;
 }
 
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
 /* --------------------------------- Media queries */
 
 /* Slightly larger container on xl screens */
