@@ -5,17 +5,18 @@
     <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 {% endblock %}
 
+{% if profile %}
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<div class="row">
+    <h2 class="brand-font text-center my-5">This is a previous order record</h2>
+</div>
 {% endblock %}
+{% endif %}
 
 {% block content %}
     <div class="overlay"></div>
     <div class="container">
+        
         <div class="row">
             <div class="col">
                 <hr>
@@ -133,11 +134,15 @@
             </div>
         </div>
 
+        {% if from_profile %}
         <div class="row">
             <div class="col-12 col-lg-7">
-
+                <a href="{% url 'profile' %}" class="park-cart-btn dark-button btn rounded-3">
+                    <span class="">Back to Profile</span>
+                </a>
             </div>
         </div>
-        
+        { % endif %}
     </div>
+</div>
 {% endblock %}
