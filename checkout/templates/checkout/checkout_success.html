@@ -5,36 +5,40 @@
     <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 {% endblock %}
 
-{% if profile %}
 {% block page_header %}
+{% if from_profile %}
 <div class="row">
     <h2 class="brand-font text-center my-5">This is a previous order record</h2>
 </div>
-{% endblock %}
+{% else %}
+<div class="row">
+    <h2 class="brand-font text-center my-5">Checkout Summary</h2>
+</div>
 {% endif %}
+{% endblock %}
 
 {% block content %}
     <div class="overlay"></div>
     <div class="container">
         
         <div class="row">
-            <div class="col">
+            <div class="col my-auto text-center">
                 <hr>
                 <h2 class="brand-font mb-4">Thanks for ordering with espressOrders</h2>
                 <hr>
                 <p class="text-black">Your order information is detailed. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
             <div class="col-12 col-lg-7">
-                <div class="order-confirmation-wrapper p-2 border mx-auto">
-                    <div class="row ">
+                <div class="order-confirmation-wrapper p-2 border rounded-3 mx-auto">
+                    <div class="row">
                         <div class="col">
-                            <h5 class="brand-font text-muted mb-2">Order Info:</h5>
+                            <h5 class="brand-font text-muted ms-1 mb-2">Order Info:</h5>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="mb-0 text-black font-weight-bold">Order Number</p>
+                            <p class="ms-3 mb-0 text-black font-weight-bold">Order Number</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.order_number }}</p>
@@ -43,7 +47,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4 ">
-                            <p class="mb-0 text-black font-weight-bold">Order Date</p>
+                            <p class="ms-3 mb-0 text-black font-weight-bold">Order Date</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.date }}</p>
@@ -53,17 +57,17 @@
 
                     <div class="row">
                         <div class="col">
-                            <h5 class="brand-font text-muted">Order Details:</h5>
+                            <h5 class="brand-font text-muted ms-1 mb-2">Order Details:</h5>
                         </div>
                     </div>
                     
                     {% for item in order.lineitems.all %}
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="small mb-0 text-black font-weight-bold">
+                            <p class="small ms-3 mb-0 text-black font-weight-bold">
                                 {{ item.product.name }}
                             </p>
-                            {% if item.item_size %}<p class="ms-2"> - {{ item.item_size }}</p>{% endif %}
+                            {% if item.item_size %}<p class="ms-4"> - {{ item.item_size }}</p>{% endif %}
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="small mb-0">£ {{item.lineitem_total}}</p>
@@ -75,13 +79,13 @@
                     
                     <div class="row">
                         <div class="col">
-                            <h5 class="brand-font text-muted mb-2">Collection Info:</h5>
+                            <h5 class="brand-font text-muted ms-1 mb-2">Collection Info:</h5>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="mb-0 text-black font-weight-bold">Collection Location:</p>
+                            <p class="ms-3 mb-0 text-black font-weight-bold">Collection Location:</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.collection_location }}</p>
@@ -90,7 +94,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="mb-0 text-black font-weight-bold">For collection by:</p>
+                            <p class="ms-3 mb-0 text-black font-weight-bold">For collection by:</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.full_name }}</p>
@@ -99,7 +103,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="mb-0 text-black font-weight-bold">Phone Number:</p>
+                            <p class="ms-3 mb-0 text-black font-weight-bold">Phone Number:</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.phone_number }}</p>
@@ -108,7 +112,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4 mb-2">
-                            <p class="mb-0 text-black font-weight-bold">Email Address:</p>
+                            <p class="ms-3 mb-0 text-black font-weight-bold">Email Address:</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.email }}</p>
@@ -118,13 +122,13 @@
                     
                     <div class="row">
                         <div class="col">
-                            <h5 class="brand-font text-muted mb-2">Billing Info:</h5>
+                            <h5 class="brand-font text-muted ms-1 mb-2">Billing Info:</h5>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-12 col-md-4 mb-2">
-                            <p class="mb-0 text-black font-weight-bold">Order Total</p>
+                            <p class="ms-3 mb-0 text-black font-weight-bold">Order Total</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">£ {{ order.order_total }}</p>
@@ -142,7 +146,7 @@
                 </a>
             </div>
         </div>
-        { % endif %}
+        {% endif %}
     </div>
 </div>
 {% endblock %}
