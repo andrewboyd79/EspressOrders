@@ -53,8 +53,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <a href="{% url 'checkout' %}">
-                                <h6 class="brand-font">Checkout</h6>
+                            <a class="park-cart-btn dark-button btn rounded-3 m" href="{% url 'checkout' %}">
+                                <h6 class="text-uppercase">Checkout</h6>
                             </a>
                         </td>                         
                     </tr>
@@ -72,8 +72,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-
-
 <script type="text/javascript">
 
     // Remove item and reload on click
