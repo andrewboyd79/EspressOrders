@@ -10,4 +10,11 @@
     <div class="toast-body bg-white">
         {{ message }}        
     </div>
+    {% if basket_total and not on_profile_page %}
+            <div class="">
+            <a href="{% url 'view_bag' %}" class="park-cart-btn dark-button btn rounded-3 w-100">
+                <span class="text-uppercase">Go To Checkout</span>
+            </a>
+        </div>
+    {% endif %}
 </div>
