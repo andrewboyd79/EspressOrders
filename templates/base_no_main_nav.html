@@ -44,11 +44,23 @@
     <header class="container-fluid">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="row">
-                <!-- Brand logo -->
+                <!-- Brand logo & Nav elements LHS -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                    <a href="{% url 'home' %}" class="nav-link">
-                        <h2 class="brand-font">espressOrders</h2>
-                    </a>
+                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                        <li class="list-inline-item">
+                            <a href="{% url 'home' %}" class="nav-link">
+                                <h2 class="brand-font">espressOrders</h2>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="{% url 'home' %}" class="ms-5 text-black nav-link">
+                                <div class="text-center">
+                                    <div><i class="fas fa-mug-hot"></i></div>
+                                    <p class="my-0 brand-font">Home</p>
+                                </div>
+                            </a>
+                        </li>  
+                    </ul>
                 </div>
                 <!-- Search element -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -158,18 +170,22 @@
     
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 my-auto bg-black">
-            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-white"><i class="fab fa-facebook"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-white"><i class="fab fa-twitter"></i></a></li>
-            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-white"><i class="fab fa-instagram"></i></a></li>
+            <li class="nav-item"><a href="https://www.facebook.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-facebook"></i></a></li>
+            <li class="nav-item"><a href="https://www.twitter.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-twitter"></i></a></li>
+            <li class="nav-item"><a href="https://www.instagram.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-instagram"></i></a></li>
         </ul>
         <ul class="nav justify-content-center border-bottom pb-3 my-auto">
             <li class="nav-item"><a href="{% url 'products'%}?category=Hot Drinks" class="nav-link m-2 px-2 text-muted">Hot Drinks</a></li>
             <li class="nav-item"><a href="{% url 'products'%}?category=Cold Drinks" class="nav-link m-2 px-2 text-muted">Cold Drinks</a></li>
             <li class="nav-item"><a href="{% url 'products'%}?category=Iced Drinks" class="nav-link m-2 px-2 text-muted">Iced Drinks</a></li>
-            <li class="nav-item"><a href="#" class="nav-link brand-font px-2 ms-2 me-2 d-none d-lg-block"><h2>espressOrders</h2></a></li>
-            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Profile</a></li>
-            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Orders</a></li>
-            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">Contact Us</a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link brand-font px-2 ms-2 me-2 d-none d-lg-block"><h2>espressOrders</h2></a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link m-2 px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">About Us</a></li>
+            {% if request.user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link m-2 px-2 text-muted">Profile</a></li>
+            {% else %}
+            <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link m-2 px-2 text-muted">Register</a></li>
+            {% endif %}
         </ul>
         <p class="text-center text-muted m-2">© 2021 Andrew Boyd</p>
     </footer>
