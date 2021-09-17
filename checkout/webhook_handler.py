@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404
 from .models import Order, OrderLineItem
 from products.models import Product
 from home.models import Location
+from profiles.models import UserProfile
 
 import json
 import time
@@ -38,6 +39,17 @@ class StripeWH_Handler:
         billing_details = intent.charges.data[0].billing_details
         order_total = round(intent.charges.data[0].amount / 100, 2)
 
+        # Update profile information if save_info was checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_full_name = billing_details.name
+                profile.default_phone_number = billing_details.phone
+                profile.default_email = billing_details.email
+                profile.save()
+
         order_exists = False
         attempts = 1
         while attempts <= 5:
@@ -61,10 +73,11 @@ class StripeWH_Handler:
                     content=f'Webhook received: {event["type"]} | Success: There is a verified order already in database', status=200)
         else:
             order = None
-            print('No orders')
+
             try:
                 order = Order.objects.create(
                     full_name=billing_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
                     collection_location=collection_location,
@@ -72,7 +85,7 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                     )
-                print('created')
+
                 for item_id, item_data in json.loads(bag).items():
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
