@@ -30,7 +30,7 @@
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="{% url 'account_logout' %}" class="dropdown-item"><i class="fas fa-wrench m-2"></i>Product Management</a>
+                <a href="{% url 'add_product' %}" class="dropdown-item"><i class="fas fa-wrench m-2"></i>Product Management</a>
             {% endif %}
             <a href="" class="dropdown-item"><i class="fas fa-id-card m-2"></i>My Profile</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item"><i class="fas fa-sign-out-alt m-2"></i>Logout</a>
