@@ -1,13 +1,15 @@
-# **INSERT NAME OF Website** 
-![Logo](LINK TO PROJECT LOGO)
+# **espressOrders** 
 
-[View website](LINK TO GITHUB PAGES OR HEROKU)
+[View espressOrders website ](https://ab79-espressorders-dev.herokuapp.com/)
 
-This NAME OF WEBSITE website has been produced by Andrew Boyd as a INSERT PROJECT for the Code Institute’s Full Stack Web Development course.
+his espressOrders website has been produced by Andrew Boyd as a Milestone Project 4 for the Code Institute’s Full Stack Web Development course.
 
-INSERT INFORMATION ON PURPOSE OF WEBSITE  
+They seem to be everywhere you look these days - coffee carts!
+From little trucks to converted horse boxes they are popping up everywhere - from beauty spot carparks, to the beach and even at kids football matches. The "post-covid" work office seems also to have created a coffee cart culture and it is this that I hope the espressOrders application will tap into.
 
-INSERT INFORMATION ON AIMS OF THE WEBSITE
+The purpose of espressOrders is to allow ordering from your favourite coffee cart ahead of time - to beat that inevitable queue! 
+
+The website aims to allow users to select a coffee cart and browse drinks are available from that cart; allow users to make their selection and customise their order and then pay for it within espressOrders site.
 
 ---
 
@@ -56,7 +58,11 @@ User Experience, and associated UX design, is concerned with how a user interact
 
 ## Business Goals
 The business expects this website to:
-- INSERT BUSINESS GOALS
+- Display the products available in each of the cart locations - over time each carts menu will evolve and so will differ from the others
+- Allow for addition, editing and deleting of products from the cart menu - only admin/superuser accounts should have this ability
+- Have necessary security functionality to ensure users cannot access admin functions
+- Record all the details necessary to process a customers order - this will include recording order, user and billing information
+- Take payment for a customers order
 
 ## Target audience
 The target audience of this website is:
