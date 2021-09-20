@@ -25,6 +25,12 @@
                 <h2 class="brand-font">{{ product.name }}</h2>                
                 <p class="mt-3"><strong>{{ product.brief_description }}</strong></p>
                 <p class="mt-3">{{ product.description }}</p>
+                {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a class="text-black" href="{% url 'edit_product' product.id %}">Edit</a> | 
+                        <a class="text-black" href="{% url 'delete_product' product.id %}">Delete</a>
+                    </small>
+                {% endif %}
             </div>
             <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                 {% csrf_token %}

@@ -45,6 +45,12 @@
                             {% if search %}
                             <h6 class="brand-font text-muted pt-2">{{type.name}}</h6>
                             {% endif %}
+                            {% if request.user.is_superuser %}
+                                <small class="ml-3 text-black">
+                                    <a class="text-black" href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a class="text-black" href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small>
+                            {% endif %}
                             </div>
                         </div>
                 </div>
