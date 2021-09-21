@@ -11,8 +11,14 @@ body {
     color: #151515;
     height: calc(100vh - 164px);
     
+    
 }
-
+.body-light {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    color: #ffffff;
+}
 .brand-font {
     font-family: 'Poiret One', cursive;
     font-style: normal;
@@ -20,25 +26,74 @@ body {
     color: #151515;
 }
 
-.dark-button {
-    background-color: #151515;
+.brand-font-light {
+    font-family: 'Poiret One', cursive;
+    font-style: normal;
+    font-weight: 200;
     color: #ffffff;
-    min-width: 210px;
+}
+
+#subhead-banner {
+    background-color: #7AA27F;
+    outline: #2f3434 1px solid;
+}
+
+.nav{
+    color: #2f3434;
+}
+
+#main-nav a{
+    color: #2f3434;
+    }
+
+#footer-social{
+    background-color: #2f3434;
+}
+
+.dark-button {
+    background-color: #A75121;
+    color: #ffffff;
+    outline: #2f3434 1px solid;
+    min-width: 100px;
 }
 
 .light-button {
-    outline: #151515 1px solid;
+    background-color: #7AA27F;
+    color: #ffffff;
+    outline: #2f3434 1px solid;
     min-width: 210px;
+}
+
+.back-button{
+    background-color: #2f3434;
+    color: #ffffff;
+    outline: #2f3434 1px solid;
 }
 
 /* Home Page */
 
 .hero-img{
     max-height: 450px;
+   
+}
+
+#hero-title{
+    color: #444D5f;
+}
+
+.hero-section{
+    
+    background-position: center;   
+    background-size: cover;
+}
+
+.social-img{
+    max-height: 75px;
+    max-width: 75px;
 }
 
 .social-proof-section{
-    background-color: lightgray;
+    background-color: #444D5f;
 }
 
 .product-decription{
@@ -77,6 +132,10 @@ body {
     color: #aab7c4;
 }
 
+.card-img-top{
+    width: 100%;
+    height: 100%;
+}
 /* --------------------------------- Media queries */
 
 /* Slightly larger container on xl screens */

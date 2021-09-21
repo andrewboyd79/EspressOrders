@@ -42,7 +42,7 @@
 
 <body>
     <header class="container-fluid">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        <div id="topnav" class="row bg-white pt-2 d-none d-lg-flex">
             <div class="row">
                 <!-- Brand logo & Nav elements LHS -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -51,15 +51,7 @@
                             <a href="{% url 'home' %}" class="nav-link">
                                 <h2 class="brand-font">espressOrders</h2>
                             </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="{% url 'home' %}" class="ms-5 text-black nav-link">
-                                <div class="text-center">
-                                    <div><i class="fas fa-mug-hot"></i></div>
-                                    <p class="my-0 brand-font">Home</p>
-                                </div>
-                            </a>
-                        </li>  
+                        </li> 
                     </ul>
                 </div>
                 <!-- Search element -->
@@ -105,15 +97,15 @@
                         </li>
                         <!-- Basket Access -->
                         <li class="list-inline-item">
-                            <a class="{% if basket_total %}brand-font text-muted{% else %}text-black{% endif %} nav-link"
+                            <a class="{% if basket_total %} brand-font text-muted {% else %}text-black{% endif %} nav-link"
                                 href=" {% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-basket"></i></div>
                                     <p class="my-0"> Basket:
                                         {% if basket_total %}
-                                        £{{ basket_total|floatformat:2 }}
+                                        £ {{ basket_total|floatformat:2 }}
                                         {% else %}
-                                        £0.00
+                                        £ 0.00
                                         {% endif %}
                                     </p>
                                 </div>
@@ -123,24 +115,26 @@
                 </div>
             </div>
         </div>
-        
+        <!--Mobile layout home only-->
         <div class="row bg-white">
             
-            <h2 class="brand-font d-lg-none text-center">espressOrders</h2>
+            <a href="{% url 'home' %}" class="nav-link text-center d-lg-none">
+                <h2 class="brand-font">espressOrders</h2>
+            </a>
             <nav class="navbar navbar-expand-lg navbar-light w-100">
-                
-                {% include 'includes/mobile-top-header.html' %}
+                <!--Includes mobile home top header only as nav-->
+                {% include 'includes/mobile-top-header_home.html' %}
                 
             </nav>
         </div>
-        <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black">
-                <h3 class="brand-font text-white my-1">Express order your Espresso's</h3>                
+        <div id="subhead-banner" class="row text-center shadow">
+            <div class="col">
+                <h3 class="brand-font-light my-1">Express order your Espresso's</h3>                
             </div>            
         </div>
     </header>
 
-
+    <!--Messages/toasts display-->
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -169,22 +163,22 @@
     {% endblock %}
     
     <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 my-auto bg-black">
-            <li class="nav-item"><a href="https://www.facebook.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-facebook"></i></a></li>
-            <li class="nav-item"><a href="https://www.twitter.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-twitter"></i></a></li>
-            <li class="nav-item"><a href="https://www.instagram.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-instagram"></i></a></li>
+        <ul class="nav justify-content-center border-bottom my-auto" id="footer-social">
+            <li class="nav-item"><a href="https://www.facebook.com" class="nav-link-icon px-3 text-white" target="self"><i class="fab fa-facebook"></i></a></li>
+            <li class="nav-item"><a href="https://www.twitter.com" class="nav-link-icon px-3 text-white" target="self"><i class="fab fa-twitter"></i></a></li>
+            <li class="nav-item"><a href="https://www.instagram.com" class="nav-link-icon px-3 text-white" target="self"><i class="fab fa-instagram"></i></a></li>
         </ul>
         <ul class="nav justify-content-center border-bottom pb-3 my-auto">
-            <li class="nav-item"><a href="{% url 'products'%}?category=Hot Drinks" class="nav-link m-2 px-2 text-muted">Hot Drinks</a></li>
-            <li class="nav-item"><a href="{% url 'products'%}?category=Cold Drinks" class="nav-link m-2 px-2 text-muted">Cold Drinks</a></li>
-            <li class="nav-item"><a href="{% url 'products'%}?category=Iced Drinks" class="nav-link m-2 px-2 text-muted">Iced Drinks</a></li>
-            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link brand-font px-2 ms-2 me-2 d-none d-lg-block"><h2>espressOrders</h2></a></li>
-            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link m-2 px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">About Us</a></li>
+            <li class="nav-item"><a href="{% url 'products'%}?category=Hot Drinks" class="nav-link px-3 text-muted">Hot Drinks</a></li>
+            <li class="nav-item"><a href="{% url 'products'%}?category=Cold Drinks" class="nav-link px-3 text-muted">Cold Drinks</a></li>
+            <li class="nav-item"><a href="{% url 'products'%}?category=Iced Drinks" class="nav-link px-3 text-muted">Iced Drinks</a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link brand-font px-3 d-none d-lg-block"><h2>espressOrders</h2></a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-3 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-3 text-muted">About Us</a></li>
             {% if request.user.is_authenticated %}
-            <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link m-2 px-2 text-muted">Profile</a></li>
+            <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link px-3 text-muted">Profile</a></li>
             {% else %}
-            <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link m-2 px-2 text-muted">Register</a></li>
+            <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link px-3 text-muted">Register</a></li>
             {% endif %}
         </ul>
         <p class="text-center text-muted m-2">© 2021 Andrew Boyd</p>

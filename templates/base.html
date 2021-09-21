@@ -42,9 +42,9 @@
 
 <body>
     <header class="container-fluid">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        <div id="topnav" class="row bg-white pt-2 d-none d-lg-flex">
             <div class="row">
-                <!-- Brand logo -->
+                <!-- Brand logo & Nav elements LHS -->
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                     <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                         <li class="list-inline-item">
@@ -105,15 +105,15 @@
                         </li>
                         <!-- Basket Access -->
                         <li class="list-inline-item">
-                            <a class="{% if basket_total %}brand-font text-muted {% else %}text-black{% endif %} nav-link"
+                            <a class="{% if basket_total %} brand-font text-muted {% else %}text-black{% endif %} nav-link"
                                 href=" {% url 'view_bag' %}">
                                 <div class="text-center">
                                     <div><i class="fas fa-shopping-basket"></i></div>
                                     <p class="my-0"> Basket:
                                         {% if basket_total %}
-                                        £{{ basket_total|floatformat:2 }}
+                                        £ {{ basket_total|floatformat:2 }}
                                         {% else %}
-                                        £0.00
+                                        £ 0.00
                                         {% endif %}
                                     </p>
                                 </div>
@@ -123,25 +123,30 @@
                 </div>
             </div>
         </div>
-        
+        <!--Mobile Layout all other screens-->
         <div class="row bg-white">
-            <h2 class="brand-font d-lg-none text-center">espressOrders</h2>
+
+            <a href="{% url 'home' %}" class="nav-link text-center d-lg-none">
+                <h2 class="brand-font">espressOrders</h2>
+            </a>
+            <!--Menu dropdown displayed on all but home screen-->
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!--Includes mobile top header and nav elements-->
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
-        <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black">
-                <h3 class="brand-font text-white my-1">Express order your Espresso's</h3>                
+        <div id="subhead-banner" class="row text-center">
+            <div class="col">
+                <h3 class="brand-font-light my-1">Express order your Espresso's</h3>                
             </div>            
         </div>
     </header>
 
-
+    <!--Messages/toasts display-->
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -170,16 +175,16 @@
     {% endblock %}
     
     <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 my-auto bg-black">
+        <ul class="nav justify-content-center border-bottom py-3 my-auto bg-black">
             <li class="nav-item"><a href="https://www.facebook.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-facebook"></i></a></li>
             <li class="nav-item"><a href="https://www.twitter.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-twitter"></i></a></li>
             <li class="nav-item"><a href="https://www.instagram.com" class="nav-link m-2 px-2 text-white" target="self"><i class="fab fa-instagram"></i></a></li>
         </ul>
-        <ul class="nav justify-content-center border-bottom pb-3 my-auto">
+        <ul class="nav justify-content-center border-bottom py-3 my-auto">
             <li class="nav-item"><a href="{% url 'products'%}?category=Hot Drinks" class="nav-link m-2 px-2 text-muted">Hot Drinks</a></li>
             <li class="nav-item"><a href="{% url 'products'%}?category=Cold Drinks" class="nav-link m-2 px-2 text-muted">Cold Drinks</a></li>
             <li class="nav-item"><a href="{% url 'products'%}?category=Iced Drinks" class="nav-link m-2 px-2 text-muted">Iced Drinks</a></li>
-            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link brand-font px-2 ms-2 me-2 d-none d-lg-block"><h2>espressOrders</h2></a></li>
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link brand-font px-2 m-2 d-none d-lg-block"><h2>espressOrders</h2></a></li>
             <li class="nav-item"><a href="{% url 'home' %}" class="nav-link m-2 px-2 text-muted">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link m-2 px-2 text-muted">About Us</a></li>
             {% if request.user.is_authenticated %}

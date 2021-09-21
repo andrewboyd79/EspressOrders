@@ -54,14 +54,14 @@
                     <tr>
                         <td>
                             <a class="park-cart-btn dark-button btn rounded-3 m" href="{% url 'checkout' %}">
-                                <h6 class="text-uppercase">Checkout</h6>
+                                <h6>Checkout</h6>
                             </a>
                         </td>                         
                     </tr>
                 </table>                          
             {% else %}
             <h4 class="brand-font my-5"> Wait a minute - you've no espresso in your order!</h4>
-            <a href="{% url 'products' %}" class="park-cart-btn dark-button btn rounded-3">
+            <a href="{% url 'products' %}" class="park-cart-btn back-button btn rounded-3">
                 <span>Back to the drinks</span>
             </a>
             {% endif %}

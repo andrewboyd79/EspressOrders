@@ -6,39 +6,39 @@
 
 {% block content %}
 <div class="container">
-    <div class="row hero-section">
+    <div class="row hero-section mt-2">
         <div class="col-12 col-md-5 my-auto">
-            <div class="row text=center mt-5 mx-2">
-                <h1 class="text-black text-center mt-5">Express order your Espresso's</h1>
+            <div class="row text-center mt-2 mx-2">
+                <h1 id="hero-title" class="text-center mt-5">Express order your Espresso's</h1>
             </div>
+
             <div class="row text-center mt-5 mx-3">
                 <p>Does the excitement of the coffee cart fade when you see the line that’s formed??</p>
             </div>
+
             <div class="row text-center mt-1 mx-3">
                 <p>EspressOrders is the convenient way to order from your favourite coffee cart and have you order ready when you are!</p>
             </div>
+
             <div class="row text-center my-5 mx-4 p-2">
                 {% for locations in location %}
                 <div class="col-6">
                     <h6>                       
-                        <a href="{% url 'products'%}?location={{ locations.name }}" class="park-cart-btn dark-button btn rounded-3">Order Now {{ locations.name }}</a>
+                        <a href="{% url 'products'%}?location={{ locations.name }}" class="park-cart-btn dark-button btn rounded-3 shadow-lg">Order Now {{ locations.name }} Cart</a>
                     </h6>
                 </div>
-                {% endfor %}
-                
-                </div>
-        </div>
-        <div class="col-12 col-md-7 text-center my-auto">
-           
-            <img class="hero-img" src="{{ MEDIA_URL }}Asset 270.png" alt="queued-coffee-shop">
-        </div>
+                {% endfor %}                </div>
+            </div>
+            <div id ="hero" class="col-12 col-md-7 text-center my-auto">           
+                <img class="hero-img" src="{{ MEDIA_URL }}the-food-truck-side-view-menu-coffee-wooden-chair-vector.jpg" alt="queued-coffee-shop">
+            </div>
     </div>
-    <div class="row social-proof-section rounded-3">
+    <div class="row social-proof-section body-light rounded-3">
         <div class="col-12">
             <div class="row text-center m-3">
                 <h4>"Some of the finest coffee available, and it comes right to the office door!"</h4></div>
             <div class="row text-center m-3">
-                <p>icon</p>
+                <img class="social-img mx-auto" src="{{ MEDIA_URL }}Asset 7.png" alt="reviewer image">
             </div>
             <div class="row text-center m-3">
                 <h6>Mr A N Onymous</h6>

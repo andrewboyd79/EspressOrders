@@ -31,11 +31,11 @@
                     <div class="card h-100">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img src="{{MEDIA_URL}}{{ product.image }}" class="card-img-top" alt="...">
+                            <img src="{{MEDIA_URL}}{{ product.image }}" class="card-img-top" alt="Image of {{product.name}}">
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img src="{{MEDIA_URL}}Asset 270.png" class="card-img-top w-25 mx-auto" alt="...">
+                            <img src="{{MEDIA_URL}}No_image.png" class="card-img-top" alt="cartoon drinks cup">
                         </a>
                         {% endif %}
                         <div class="card-body">
