@@ -20,7 +20,7 @@ class OrderAdmin(admin.ModelAdmin):
         'order_total',
         'original_bag',
         'stripe_pid',
-        'qr_code',
+        'qr_code_image',
     )
 
     fields = (
@@ -34,7 +34,7 @@ class OrderAdmin(admin.ModelAdmin):
         'order_total',
         'original_bag',
         'stripe_pid',
-        'qr_code',
+        'qr_code_image',
     )
 
     list_display = (

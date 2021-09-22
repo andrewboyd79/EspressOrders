@@ -25,7 +25,7 @@ class Order(models.Model):
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False,
                                   default='')
-    qr_code = models.ImageField(null=True, blank=True)
+    qr_code_image = models.ImageField(null=True, blank=True)
 
     def _generate_order_number(self):
         """
