@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load qr_code %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
@@ -27,6 +28,11 @@
                 <h2 class="brand-font mb-4">Thanks for ordering with espressOrders</h2>
                 <hr>
                 <p class="text-black">Your order information is detailed. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                <hr>
+                <p class="text-black">Please present the following QR Code at order collection:</p>
+                {% qr_from_text order.order_number size="s" %}
+
+
             </div>
             <div class="col-12 col-lg-7">
                 <div class="order-confirmation-wrapper p-2 border rounded-3 mx-auto">
