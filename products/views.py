@@ -67,11 +67,9 @@ def product_detail(request, product_id):
     """
 
     product = get_object_or_404(Product, pk=product_id)
-    ordering_location = request.session['selected_location']
-
+       
     context = {
         'product': product,
-        'ordering_location': ordering_location,
     }
 
     return render(request, 'products/product_detail.html', context)
