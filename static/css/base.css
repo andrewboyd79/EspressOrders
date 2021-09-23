@@ -1,9 +1,5 @@
 /* General Styling */
 
-html {
-    height: 100%;
-}
-
 body {
     font-family: 'Raleway', sans-serif;
     font-style: normal;
@@ -53,21 +49,18 @@ body {
 .dark-button {
     background-color: #A75121;
     color: #ffffff;
-    outline: #2f3434 1px solid;
     min-width: 100px;
 }
 
 .light-button {
     background-color: #7AA27F;
     color: #ffffff;
-    outline: #2f3434 1px solid;
     min-width: 210px;
 }
 
 .back-button{
     background-color: #2f3434;
     color: #ffffff;
-    outline: #2f3434 1px solid;
 }
 
 /* Home Page */
