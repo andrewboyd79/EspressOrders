@@ -1,0 +1,13 @@
+{% load account %}
+{% user_display user as user_display %}
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}<h5 class="brand-font">Hello, its Andrew from {{ site_name }}!</h5>
+
+<p> You're receiving this e-mail because <strong>{{ user_display }}</strong> has provided this e-mail address to connect their {{ site_name }} account.</p>
+
+<p> To confirm this is correct, go to <a><strong>{{ activate_url }}</strong></a></p> 
+{% endblocktrans %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}<h6>Thanks for registering from everyone at {{ site_name }}!</h6>
+{% endblocktrans %}
+{% endautoescape %}
