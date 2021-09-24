@@ -17,7 +17,7 @@
 
 <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button class="park-cart-btn dark-button btn rounded-3 mx-auto my-3" type="submit">{% trans 'Confirm' %}</button>
+    <button class="park-cart-btn dark-button btn rounded-3 w-100 my-3" type="submit">{% trans 'Confirm' %}</button>
 </form>
 
 {% else %}
