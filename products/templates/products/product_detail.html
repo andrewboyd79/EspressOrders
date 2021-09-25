@@ -10,13 +10,9 @@
         <div class="col-12 col-md-5 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if product.image %}                    
-                <a href="{{ product.image }}" target="_blank">
                     <img class="card-img-top img-fluid w-75 mx-auto" src="{{ MEDIA_URL }}{{ product.image }}" alt="Image of {{ product.name }}">
-                </a>
-                    {% else %}
-                    <a href="{{ product.image }}" target="_blank">
-                        <img class="card-img-top img-fluid w-75 mx-auto" src="{{ MEDIA_URL }}No_image.png" alt="Cartoon Drinks Cup">
-                    </a>
+                {% else %}
+                    <img class="card-img-top img-fluid w-75 mx-auto" src="{{ MEDIA_URL }}No_image.png" alt="Cartoon Drinks Cup">
                 {% endif %}
             </div>
         </div>
