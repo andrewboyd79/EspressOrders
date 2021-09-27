@@ -7,12 +7,12 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-12 text-center brand-font mt-5 mb-3">
+        <div class="col-12 text-center brand-font mt-3">
             <h2>About Us 
                 </h2>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-12 col-lg-6">
             <div class="mb-5">
                 <h4 class="text-center brand-font">What are we?</h4>
@@ -31,7 +31,7 @@
         <div class="col-12 col-lg-6 text-center brand-font">
             <h4>Current Carts Info</h4>
             {% for carts in cart %}
-            <div class="card my-3">
+            <div class="card rounded-3 my-3">
                 <div class="row g-0">
                     <div class="col-md-4">
                         {% if carts.image %}
@@ -42,10 +42,11 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title brand-font">{{carts.name }} - the {{ carts.location }} cart</h5>
+                            <h5 class="card-title brand-font">The {{ carts.location }} cart - a.k.a {{ carts.name }}</h5>
                             <p class="card-text">{{ carts.location_description }}</p>
                             <p class="card-text"><small class="text-muted">Opening Hours</small></p>
                             <p class="card-text"><small class="text-muted">{{ carts.opening_times }}</small></p>
+                            <p class="card-text">Any question? Just ask for: {{ carts.barista }}</p>
                         </div>
                     </div>
                 </div>
