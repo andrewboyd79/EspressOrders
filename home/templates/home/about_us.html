@@ -37,7 +37,7 @@
                         {% if carts.image %}
                         <img src="{{MEDIA_URL}}{{ carts.image }}" class="img-fluid rounded-start" alt="coffee-cart">
                         {% else %}
-                        <img src="/media/No_image.png" class="img-fluid rounded-start" alt="coffee-cart">
+                        <img src="{{MEDIA_URL}}No_image.png" class="img-fluid rounded-start" alt="coffee-cart">
                         {% endif %}
                     </div>
                     <div class="col-md-8">
