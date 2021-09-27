@@ -3,7 +3,7 @@
 body {
     font-family: 'Raleway', sans-serif;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 400;
     color: #151515;
     height: calc(100vh - 164px);
     
@@ -42,8 +42,12 @@ body {
     color: #2f3434;
     }
 
-#footer-social{
+.footer-social{
     background-color: #2f3434;
+}
+
+.nav-link:focus, .nav-link:hover{
+    color:#A75121;
 }
 
 .dark-button {
@@ -52,16 +56,30 @@ body {
     min-width: 100px;
 }
 
+.dark-button:hover{
+    color: #2f3434;
+}
+
 .light-button {
     background-color: #7AA27F;
     color: #ffffff;
     min-width: 210px;
 }
 
+.light-button:hover{
+    color: #2f3434;
+}
+
 .back-button{
     background-color: #2f3434;
     color: #ffffff;
 }
+
+.back-button:hover{
+    color: #A75121;
+}
+
+
 
 /* Home Page */
 
@@ -126,8 +144,8 @@ body {
 }
 
 .card-img-top{
-    width: 100%;
-    height: 100%;
+    max-width: 370px;
+    max-height: 370px;
 }
 /* --------------------------------- Media queries */
 

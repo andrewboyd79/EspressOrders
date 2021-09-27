@@ -1,1 +1,0 @@
-espressOrders confirmation of your order ({{ order.order_number }})
