@@ -35,7 +35,7 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         {% if carts.image %}
-                        <img src="{{carts.image }}" class="img-fluid rounded-start" alt="coffee-cart">
+                        <img src="{{MEDIA_URL}}{{ carts.image }}" class="img-fluid rounded-start" alt="coffee-cart">
                         {% else %}
                         <img src="/media/No_image.png" class="img-fluid rounded-start" alt="coffee-cart">
                         {% endif %}
