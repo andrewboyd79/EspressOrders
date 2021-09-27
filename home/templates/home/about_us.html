@@ -1,0 +1,60 @@
+{% extends 'base_no_main_nav.html' %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center brand-font mt-5 mb-3">
+            <h2>About Us 
+                </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="mb-5">
+                <h4 class="text-center brand-font">What are we?</h4>
+                <p class="text-center">EspressOrders has been created to make it easier to order drinks from your favourite mobile coffee cart. We allow our users to order and pay directly from the website to save them time and avoid that queue!</p>
+            </div>
+            <div class="mb-3">
+                <h4 class="text-center brand-font">Who are we?</h4>
+                <p class="text-center">EspressOrders is the idea of Andrew B. Having spent his fair share of time in long queues for coffee cart near to his work Andrew thought someone should do something about it - and he was that somenone!</p>
+            </div>
+            <div class="mb-3">
+                <h4 class="text-center brand-font">Where are we?</h4>
+                <p class="text-center">EspressOrders is currently being trialled in a number of local coffee carts.</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-6 text-center brand-font">
+            <h4>Current Carts Info</h4>
+            {% for carts in cart %}
+            <div class="card my-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        {% if carts.image %}
+                        <img src="{{carts.image }}" class="img-fluid rounded-start" alt="coffee-cart">
+                        {% else %}
+                        <img src="/media/No_image.png" class="img-fluid rounded-start" alt="coffee-cart">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title brand-font">{{carts.name }} - the {{ carts.location }} cart</h5>
+                            <p class="card-text">{{ carts.location_description }}</p>
+                            <p class="card-text"><small class="text-muted">Opening Hours</small></p>
+                            <p class="card-text"><small class="text-muted">{{ carts.opening_times }}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    {% endblock%}
+
+{% block page_footer %}
+{% endblock %}
