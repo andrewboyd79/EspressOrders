@@ -7,33 +7,30 @@
 {% endblock %}
 
 {% block page_header %}
-{% if from_profile %}
-<div class="row">
-    <h2 class="brand-font text-center my-5">This is a previous order record</h2>
-</div>
-{% else %}
-<div class="row">
-    <h2 class="brand-font text-center my-5">Checkout Summary</h2>
-</div>
-{% endif %}
+    {% if from_profile %}
+    <div class="row">
+        <h2 class="brand-font text-center my-5">This is a previous order record</h2>
+    </div>
+    {% else %}
+    <div class="row">
+        <h2 class="brand-font text-center my-5">Checkout Summary</h2>
+    </div>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        
+    <div class="container">        
         <div class="row">
             <div class="col my-auto text-center">
                 <hr>
-                <h2 class="brand-font mb-4">Thanks for ordering with espressOrders</h2>
+                    <h2 class="brand-font mb-4">Thanks for ordering with espressOrders</h2>
                 <hr>
-                <p class="text-black">Your order information is detailed. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                    <p class="text-black">Your order information is detailed. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
                 <hr>
-                <p class="text-black">Please present the following QR Code at order collection:</p>
-                {% qr_from_text order.order_number size="s" %}
-
-
+                    <p class="text-black">Please present the following QR Code at order collection:</p>
+                    {% qr_from_text order.order_number size="s" %}
             </div>
+
             <div class="col-12 col-lg-7">
                 <div class="order-confirmation-wrapper p-2 border rounded-3 mx-auto">
                     <div class="row">
@@ -44,7 +41,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="ms-3 mb-0 text-black font-weight-bold">Order Number</p>
+                            <p class="ms-3 mb-0 text-black">Order Number</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.order_number }}</p>
@@ -53,7 +50,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4 ">
-                            <p class="ms-3 mb-0 text-black font-weight-bold">Order Date</p>
+                            <p class="ms-3 mb-0 text-black">Order Date</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.date }}</p>
@@ -70,13 +67,13 @@
                     {% for item in order.lineitems.all %}
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="small ms-3 mb-0 text-black font-weight-bold">
+                            <p class="small ms-3 mb-0 text-black">
                                 {{ item.product.name }}
                             </p>
                             {% if item.item_size %}<p class="ms-4"> - {{ item.item_size }}</p>{% endif %}
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
-                            <p class="small mb-0">£ {{item.lineitem_total}}</p>
+                            <p class="small mb-0">£ {{ item.lineitem_total }}</p>
                             <p class="small ms-2">- {{ item.quantity }} @ £ {{ item.product.starting_price }} each</p>
                         </div>
                     </div>
@@ -91,7 +88,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="ms-3 mb-0 text-black font-weight-bold">Collection Location:</p>
+                            <p class="ms-3 mb-0 text-black">Collection Location:</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.collection_location }}</p>
@@ -100,7 +97,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="ms-3 mb-0 text-black font-weight-bold">For collection by:</p>
+                            <p class="ms-3 mb-0 text-black">For collection by:</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.full_name }}</p>
@@ -109,7 +106,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <p class="ms-3 mb-0 text-black font-weight-bold">Phone Number:</p>
+                            <p class="ms-3 mb-0 text-black">Phone Number:</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.phone_number }}</p>
@@ -118,7 +115,7 @@
                     
                     <div class="row">
                         <div class="col-12 col-md-4 mb-2">
-                            <p class="ms-3 mb-0 text-black font-weight-bold">Email Address:</p>
+                            <p class="ms-3 mb-0 text-black">Email Address:</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">{{ order.email }}</p>
@@ -134,7 +131,7 @@
 
                     <div class="row">
                         <div class="col-12 col-md-4 mb-2">
-                            <p class="ms-3 mb-0 text-black font-weight-bold">Order Total</p>
+                            <p class="ms-3 mb-0 text-black">Order Total</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
                             <p class="mb-0">£ {{ order.order_total }}</p>
@@ -148,7 +145,7 @@
         <div class="row">
             <div class="col-12 col-lg-7">
                 <a href="{% url 'profile' %}" class="back-button btn rounded-3">
-                    <span class="">Back to Profile</span>
+                    <span>Back to Profile</span>
                 </a>
             </div>
         </div>

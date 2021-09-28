@@ -3,8 +3,6 @@ from django.shortcuts import render, redirect, reverse, \
 from django.contrib import messages
 from django.conf import settings
 from django.views.decorators.http import require_POST
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
 
 from .forms import OrderForm
 from profiles.forms import UserProfileForm
@@ -77,7 +75,8 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for item_size, quantity in item_data['items_by_size'].items():
+                        for item_size, quantity in \
+                             item_data['items_by_size'].items():
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -172,7 +171,7 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Your order was successfully processed! \
+    messages.success(request, 'Your order was successfully processed! \
         Your order will be available for collection shortly.')
 
     if 'bag' in request.session:
@@ -184,20 +183,3 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
-
-    def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
-        cust_email = order.email
-        subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.html',
-            {'order': order})
-        body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.html',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
-        )
