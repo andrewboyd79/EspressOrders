@@ -36,7 +36,7 @@ def add_to_bag(request, item_id):
         else:
             bag[item_id] = {'items_by_size': {item_size: quantity}}
 
-        messages.success(request, f'Thanks! A {product.name} has been added \
+        messages.success(request, f'Thanks! {product.name} going in \
                             to your basket')
     else:
         if item_id in list(bag.keys()):
