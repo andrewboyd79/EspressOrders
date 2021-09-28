@@ -5,16 +5,16 @@ body {
     font-style: normal;
     font-weight: 400;
     color: #151515;
-    height: calc(100vh - 164px);
-    
-    
+    height: calc(100vh - 164px);    
 }
+
 .body-light {
     font-family: 'Raleway', sans-serif;
     font-style: normal;
     font-weight: 200;
     color: #ffffff;
 }
+
 .brand-font {
     font-family: 'Poiret One', cursive;
     font-style: normal;
@@ -79,8 +79,6 @@ body {
     color: #A75121;
 }
 
-
-
 /* Home Page */
 
 .hero-img{
@@ -92,8 +90,7 @@ body {
     color: #444D5f;
 }
 
-.hero-section{
-    
+.hero-section{    
     background-position: center;   
     background-size: cover;
 }

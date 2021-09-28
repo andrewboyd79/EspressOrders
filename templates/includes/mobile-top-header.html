@@ -1,12 +1,13 @@
 <li class="list-inline-item">
-    <a class="{% if basket_total %} brand-font text-muted {% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
+    <a class="{% if basket_total %} brand-font text-muted {% else %}text-black{% endif %} nav-link d-block d-lg-none"
+        href="{% url 'view_bag' %}">
         <div class="text-center">
             <div><i class="fas fa-shopping-basket"></i></div>
             <p class="my-0">
                 {% if basket_total %}
-                    £{{ basket_total|floatformat:2 }}
+                £{{ basket_total|floatformat:2 }}
                 {% else %}
-                    £0.00
+                £0.00
                 {% endif %}
             </p>
         </div>
