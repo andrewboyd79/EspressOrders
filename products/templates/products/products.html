@@ -9,16 +9,18 @@
     <div class="row">
         <div class="col-12 text-center brand-font mt-3">
             <h1>Drinks {% if location %}
-                <span><h6 class="mt-2">@ the {{location}} cart</h6></span>  
-                 {% endif %}</h1>
+                <span>
+                    <h6 class="mt-2">@ the {{location}} cart</h6>
+                </span>
+                {% endif %}</h1>
         </div>
     </div>
     <div class="row">
         {% for type in types %}
-        
+
         <div class="col-12 text-center brand-font my-3">
             {% if not search %}
-            <h3>{{ type.name }}</h3>   
+            <h3>{{ type.name }}</h3>
             {% endif %}
         </div>
         <div class="col-10 offset-1">
@@ -26,12 +28,13 @@
             </div>
             <div class="row">
                 {% for product in products %}
-                {% if type == product.type %}                   
+                {% if type == product.type %}
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
                     <div class="card h-100">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.id %}">
-                            <img src="{{MEDIA_URL}}{{ product.image }}" class="card-img-top" alt="Image of {{product.name}}">
+                            <img src="{{MEDIA_URL}}{{ product.image }}" class="card-img-top"
+                                alt="Image of {{product.name}}">
                         </a>
                         {% else %}
                         <a href="{% url 'product_detail' product.id %}">
@@ -46,30 +49,30 @@
                             <h6 class="brand-font text-muted pt-2">{{type.name}}</h6>
                             {% endif %}
                             {% if request.user.is_superuser %}
-                                <small class="ml-3 text-black">
-                                    <a class="text-black" href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                    <a class="text-black" href="{% url 'delete_product' product.id %}">Delete</a>
-                                </small>
+                            <small class="ml-3 text-black">
+                                <a class="text-black" href="{% url 'edit_product' product.id %}">Edit</a> |
+                                <a class="text-black" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>
                             {% endif %}
-                            </div>
                         </div>
+                    </div>
                 </div>
                 {% endif %}
-            {% endfor %}
+                {% endfor %}
             </div>
         </div>
         {% endfor %}
         {% if search %}
         <a class="text-end btt-link text-black">
-                <div class="brand-font text-black pe-5">
+            <div class="brand-font text-black pe-5">
                 <h6>Back to top</h6>
-            </a>	
-        </div>
-        {% endif %}
+        </a>
     </div>
-   
-    <div class="row">
-    </div>
+    {% endif %}
+</div>
+
+<div class="row">
+</div>
 </div>
 {% endblock%}
 
@@ -77,10 +80,10 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
 {% endblock %}
