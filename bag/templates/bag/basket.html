@@ -8,16 +8,14 @@
 <div class="container">
     <div class="col-12 brand-font text-center mt-5">
         <div class="row">
-        <h2>Basket</h2>
+            <h2>Basket</h2>
         </div>
     </div>
     <div class="row">
         <div class="col my-auto">
             {% if basket_items %}
             <div>
-                <h4 class="brand-font">
-                    Order Details
-                </h4>
+                <h4 class="brand-font">Order Details</h4>
                 <hr>
                 <table class="table table-sm table-borderless w-100">
                     {% for items in basket_items%}
@@ -27,25 +25,26 @@
                             {% if items.item_size %}
                             <p class="ms-3"> - {{ items.item_size }}</p>
                             {% endif %}
-                        </td>     
+                        </td>
                         <td>
-                            <h6 class="text-end">£ {{items.item_total}}</h6>
-                        </td>     
+                            <h6 class="text-end">£ {{ items.item_total }}</h6>
+                        </td>
                         <td>
-                            <a class="remove-item text-danger" id="remove_{{items.item_id}}" data-item_size="{{ items.item_size }}">
+                            <a class="remove-item" id="remove_{{items.item_id}}"
+                                data-item_size="{{ items.item_size }}">
                                 <p class="text-end brand-font"><i class="far fa-times-circle"></i></p>
-                            </a>                            
-                        </td>     
+                            </a>
+                        </td>
                     </tr>
                     {% endfor %}
                     <tr class="basket_total">
                         <td class="py-5">
                             <h4 class="brand-font me-5">
-                            Total:
+                                Total:
                             </h4>
                         </td>
                         <td class="py-5">
-                            <h5 class="text-end">£ {{basket_total}}</h5>
+                            <h5 class="text-end">£ {{ basket_total }}</h5>
                         </td>
                     </tr>
                     <tr>
@@ -53,36 +52,38 @@
                             <a class="park-cart-btn dark-button btn rounded-3 m" href="{% url 'checkout' %}">
                                 <h6>Checkout</h6>
                             </a>
-                        </td>                         
+                        </td>
                     </tr>
-                </table>                          
-            {% else %}
-            <h4 class="brand-font my-5"> Wait a minute - you've no espresso in your order!</h4>
-            <a href="{% url 'products' %}" class="park-cart-btn back-button btn rounded-3">
-                <span>Back to the drinks</span>
-            </a>
-            {% endif %}
+                </table>
+                {% else %}
+                <h4 class="brand-font my-5"> Wait a minute - you've no espresso in your order!</h4>
+                <a href="{% url 'products' %}" class="park-cart-btn back-button btn rounded-3">
+                    <span>Back to the drinks</span>
+                </a>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
-{% endblock%}
+    {% endblock%}
 
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
+    {% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        // Remove item and reload on click
+        $('.remove-item').click(function (e) {
+            var csrfToken = "{{ csrf_token }}";
+            var itemId = $(this).attr('id').split('remove_')[1];
+            var item_size = $(this).data('item_size');
+            var url = `/bag/remove/${itemId}`;
+            var data = {
+                'csrfmiddlewaretoken': csrfToken,
+                'item_size': item_size
+            };
 
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var item_size = $(this).data('item_size');
-        var url = `/bag/remove/${itemId}`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'item_size': item_size};
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-</script>
-{% endblock %}
+            $.post(url, data)
+                .done(function () {
+                    location.reload();
+                });
+        })
+    </script>
+    {% endblock %}
