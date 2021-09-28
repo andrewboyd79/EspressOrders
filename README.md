@@ -1,6 +1,6 @@
 # **espressOrders** 
 
-![Home](documentation/screenshots/Screenshot_espressOrders_homepage.png)
+![Home](documentation/screenshots/espressOrders_mockups.png)
 
 [View espressOrders website ](https://ab79-espressorders-dev.herokuapp.com/)
 
@@ -22,7 +22,6 @@ The website aims to allow users to select a coffee cart and browse drinks are av
     - [Target Audience](#Target-Audience)
     - [User Goals](#User-Goals)
     - [User Stories](#User-Stories)
-    - [User Considerations](#User-considerations)
     - [Wireframe diagrams](#Wireframe-diagrams)
         - [Home Page](#Home-page)
         - [Product Page](#Product-page)
@@ -65,7 +64,6 @@ The website aims to allow users to select a coffee cart and browse drinks are av
 
 7. **[Credits](#Credits)**
     - [Images](#Images)
-    - [Content](#Content)
     - [Code](#Code)
     - [Acknowledgements](#Acknowledgements)
 ---
@@ -97,9 +95,9 @@ Users will be expecting information presentation to be:
 
 ## User Goals
 Users of this website expect to be able to:
-- select and order coffee from their chosen coffee cart
-- customise and pay for their order securely
-- find out relevant information about the coffe cart 
+- Select and order coffee from their chosen coffee cart
+- Customise and pay for their order securely
+- Find out relevant information about the coffe cart 
 
 
 ## User Stories
@@ -126,11 +124,6 @@ The following user stories have been developed to outline some of the benefits t
 18. As a business owner I expect to be able to secure the site so only authorised user can access/edit products
 19. As a business owner I expect to be able to allow users to access relevant socail media channels
 
-
-## User considerations
-Consideration has been given to the following when developing a website which meets the needs of both the business and the users:
-
-- INSERT ANY USER CONSIDERATIONS
 
 ## Wireframe diagrams
 
@@ -175,6 +168,7 @@ Consideration has been given to the following when developing a website which me
  - [Mobile view](documentation/wireframes/Wireframing_profile_mobile.pdf)
  - [Tablet view](documentation/wireframes/Wireframing_profile_tablet.pdf)
  - [Desktop view](documentation/wireframes/Wireframing_profile_desktop.pdf) 
+
 
 ## Design Considerations
 
@@ -245,24 +239,24 @@ Based on importance/feasability analysis the following features will be availabl
 ## Global Features
 The following features will persist across all website pages to provide a consitent look and feel:
 
- - Header section
-
-![Header_home](documentation/screenshots/Screenshot_espressOrders_home_header.png)
+ ### Header section
 
 - Branding - the espressOrders name will be located in the top left portion of the header; it will provide consistent branding.  Clicking on the logo returns the user to the home page. The branding alter location to the centre on smaller screen sizes as the options collapse under a hamburger menu icon.
 
 - Navbar - the nav bar is comprised of home elements to the left side of the screen, search box in centre and account/basket info on the right side of screen on desktop. Home button is displayed on all pages apart from the home page itself (where it is not necessary). There is a dropdown menu under the My Account icon housing the Product Management/User Profile and Login/out functionality.
 
+![Header_home](documentation/screenshots/Screenshot_espressOrders_home_header.png)
+
 - The navbar/secondary navbar will size responsively and the icons/menus will drop under a hamburger icon located on left hand side of screen; the basket remains visible on all screen sizes on the right hand side of the display. 
 
-- Secondary navbar - on all pages (apart from the home page) a secondary navbar exists with the product types/categories. Each houses a dropdown to allow the user to choose a product type/category as appropriate. This also drops under the hamburger icon on smaller screen sizes.
+- Secondary navbar - on all pages (apart from the home page) a secondary navbar exists with the product types/categories (see below). Each houses a dropdown to allow the user to choose a product type/category as appropriate. This also drops under the hamburger icon on smaller screen sizes.
 
 ![Header](documentation/screenshots/Screenshot_espressOrders_header.png)
 
 - Subhead banner - a subheading banner, in contrasting colour, is displayed on all screen sizes. This allows the site administrator to provide promotion/information to site users in a prominent location. 
 
 
-- Footer Section
+### Footer Section
 
 ![Footer](documentation/screenshots/Screenshot_espressOrders_footer.png)
 
@@ -278,6 +272,7 @@ The following features will persist across all website pages to provide a consit
 
 - The footer elements will resize responsively.
 
+
 ## Home Page Features
 
 ![Home](documentation/screenshots/Screenshot_espressOrders_homepage.png)
@@ -290,9 +285,9 @@ The following features will persist across all website pages to provide a consit
 
 ## Product/Product Detail Pages Features
 
-![Product](documentation/screenshots/Screenshot_espressOrders_products_alt.png)
-
 - The product & product detail pages contain the majority of the sites information. The information is presented in an sinmple responsive grid layout; it aims to be engaging, visually appealing and informative about the products, prices customisation options etc. The number of products displayed on the grid varies from 4x across on largest screen sizes to 1x across on mobile to make best use of space.
+
+![Product](documentation/screenshots/Screenshot_espressOrders_products_alt.png)
 
 - The graphics/images for each product are simple, consistent in size and style and hopefully visually engaging. If no image is available for a product a default cup image with 'Coming soon' is displayed - the aim is to maintain consistent imagery at all times.
 
@@ -308,9 +303,9 @@ The following features will persist across all website pages to provide a consit
 
 ## Basket Page Features
 
- ![Basket](documentation/screenshots/Screenshot_espressOrders_basket.png)
-
 - The basket page shows the items the user has currently ordered. When the basket is empty the user is alerted to that fact and prompted to return to the products page. The basket is displayed full width of the screen on all device sizes.
+
+ ![Basket](documentation/screenshots/Screenshot_espressOrders_basket.png)
 
 - The basket summarises the items in the order detailing the quanity of each product, any customisation/size options and the cost of that line item. A total cost for the order is also calculated.
 
@@ -320,13 +315,13 @@ The following features will persist across all website pages to provide a consit
 
 ## Checkout/Checkout Success Page Features
 
-![Checkout](documentation/screenshots/Screenshot_espressOrders_checkout.png)
-
 - The checkout page is split into two columns on larger screens and single full width column on smaller device sizes.
 
 - There is an order summary section (similar in layout/style to the basket page is displayed) showing the number/information regarding the items to be ordered. Users can return to the basket directly from this section to amend their order.
 
 - The user then completes a form containing their Personal Details, Collection Details and Payment Details. This form is styled to be consistent with the rest of the site.
+
+![Checkout](documentation/screenshots/Screenshot_espressOrders_checkout.png)
 
 - The user can opt to save/update 'default' personal details if they're logged in to their profile. If they've opted to save details their personal information will be completed when they open the checkout page. They can also redirect to register or login to an account directly from this page.
 
@@ -344,9 +339,9 @@ The following features will persist across all website pages to provide a consit
 
 ## Profile/Order History Page Features
 
-![Profile](documentation/screenshots/Screenshot_espressOrders_profile.png)
-
 - The profile page option is available on the My Account dropdown for users who are resistered and logged in to the site.
+
+![Profile](documentation/screenshots/Screenshot_espressOrders_profile.png)
 
 - It has two sections - Default Profile Information & Order History. The Default Profile History lists the current user information and allows the user to update it directly from the profile page. The order history lists an overview of each order the user has placed in date order - with newest orders being displayed first.
 
@@ -362,18 +357,28 @@ The following features will persist across all website pages to provide a consit
 ![Product_Management](documentation/screenshots/Screenshot_espressOrders_product_management.png)
 
 - Toasts/messages appear throughout the site following a variety of user actions.
+
+![Toasts](documentation/screenshots/Screenshot_espressOrders_toasts.png)
+
 - Registration, login, account management and authentication is handled within Django using AllAuth 
 
 ## Features for future releases
 The following features will be added to the website in future releases:
 
 - Further customisation options specific to each drink type/category will be available in future releases.
+
 - Additional user payment options will be incorporated into the site to give the user further choice on how they wish to pay for their order.
+
 - Email confirmation of user order with all order information/QR Code being included.
+
 - Information on each cart will integrate Google Maps to show the cart on map and provide user directions from current location.
+
 - The home page will feature more content for information/blog posts to allow site administrator to engage more fully with users. This section may then link to form/means to allow users to leave a review/comment.
+
 - Additional seasonal categories e.g. special offers, winter warmers etc. will be added to allow the site administrator to highlight specials and new product lines.
+
 - Allow users to save default payment detailed to speed up the checkout process.
+
 - Social account integration with AllAuth for registration/account management.
 
 ---
@@ -393,9 +398,9 @@ An Amazon AWS S3 bucket (configured with the necessary policies and user access)
 In the development environment a sqlite3 database is used and static/media files are stored locally. Config variables within the Heroku app are used to determine if website is in the development/production environment and whether AWS should be used.
 
 ## Entity Relationship Diagram
-The following Entity Relationship diagram has been produced to show the relationships between the entity sets in the campfireCooking database
+The following Entity Relationship diagram has been produced to show the relationships between the entity sets in the espressOrders database
 
-[Entity Relationship Diagram]()
+[Entity Relationship Diagram](documentation/screenshots/espressOrders_ERD.pdf)
 
 ---
 
@@ -494,17 +499,16 @@ To set up the Amazon AWS S3 bucket the following steps were taken:
 ## Images
 The following images have been used for this project:
 
-- [INSERT LOCATION OF IMAGE ON SITE](INSERT WEB ADDRESS FOR IMAGE) - Image by INSERT CONTRIBUTOR NAME from WEBSITE NAME
-
-
-
-## Content
-- INSERT SOURCES OF ADDITIONAL CONTENT
+- [Hero Image](https://www.istockphoto.com/vector/young-modern-people-stand-in-line-gm1143717885-307248819) - Image by Кристина Чистякова from iStock Photo
+ - [Illustrations](https://lukaszadam.com/) - Illustrations purchased from Lukasz Adam
+ - [Product Images / coffee cup mockups](https://www.vecteezy.com/vector-art/1330175-paper-coffee-cup-mockups) - Image by Chaiwat Sridara - edited in Canva.com
 
 ## Code
 - Additional code has been attributed, where relavant, in comments where it has been used
 
 ## Acknowledgements
 - Thanks to my mentor (Aaron Sinnott) for his guidance and help during this project
+
 - Thanks to the Code Institute Tutor support team for the numerous tutor sessions (day & night) thoughout the course of this sites development and during the Diploma in Fullstack web development
-- Thanks to the Code Instutute Slack community who helped with various articles, suggestions and problem solves
+- Thanks to the Code Instutute Slack community w
+ho helped with various articles, suggestions and problem solves
