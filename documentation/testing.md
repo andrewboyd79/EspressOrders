@@ -91,8 +91,6 @@ The filtering by categories functionality was tested to ensure that only items e
 
 - User selects Soft Drinks from Cold Drinks option - filters as expected
 
-- User selects Soft Drinks from Cold Drinks option - filters as expected
-
 - User selects Iced Coffee from Iced Drinks option - filters as expected
 
 ### These tests proves the categories filtering functionality works as expected
@@ -617,12 +615,18 @@ The website has been tested on the following browsers:
 The following major bugs were noted during development of the espressOrder website:
 - Once deployed to Heroku migrations which happened locally to sqlite db did not move over to postgresql db. Solution: variables not set correctly within GitPod.
 - Media files did not transfer to AWS bucket as expected whenever static files did. Solution: manual upload of images to AWS bucket
--Variety of errors caused by use of most recent version of psycogp2. Solution: reverted to older version of pscyogp2 as used in Boutique Ado
--Issues getting location data stored in the Stripe metadata. Solution: amended code as location was a foreign key and this wasn't accounted for within code
--Issues with images being displayed correctly. Solution: media processor code was incorrect
+- Variety of errors caused by use of most recent version of psycogp2. Solution: reverted to older version of pscyogp2 as used in Boutique Ado
+- Issues getting location data stored in the Stripe metadata. Solution: amended code as location was a foreign key and this wasn't accounted for within code
+- Issues with images being displayed correctly. Solution: media processor code was incorrect
+
+The following ongoing bugs still remain:
+- Emailing order confirmations is not working as expected currently and will need further development work to resolve ASAP
+
 
 ---
 
 # **Validation**
 
-All HTML/CSS/Python pages have been checked against the linters running in GitPod and no problems or errors exist.
+All HTML/CSS/Python pages have been checked against the linters running in GitPod and no significant problems or errors exist with the exception of the following:
+
+- In settings.py the AUTH_PASSWORD_VALIDATORS are showing as too long for PEP8 compliance; however splitting them causes password authentication/registration to fail and 
