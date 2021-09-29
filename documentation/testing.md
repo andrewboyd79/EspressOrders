@@ -320,117 +320,269 @@ Admin User can delete products:
 
 The user stories from the README.md file were used as a basis for testing.  For each test case the test acceptance criteria, evidence/observations and outcome have been recorded:
 
-**1. "As a user I want to find campfire recipes so that I can cook meals on an open fire"**
+**1. "As a customer I expect to be able to find information about where the coffee carts are located"**
 
 Acceptance criteria:
-- End users should be able to find campfire recipes  
-- This information should be available on all device sizes.
+- End users should be able to find information of the carts locations  
 
 Evidence/Observations:
-- The recipes.html page contains recipes suitable for cooking on an open fire 
+- The about_us.html page contains information on espressoOrders and the carts. Location forms part of this information 
 
-![User story 1 evidence screenshot 1](tests/RecipesNoEdit.png)
+![User story 1 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US1.png)
 
 Outcome: Test successful
 
 ---
 
-**2. "2. As a user I want to be able to add my own recipes so that others can enjoy them"**
+**2. "As a customer I expect to be able to find out the opening hours of the carts"**
 
 Acceptance criteria:
-- End users should be able to upload a recipe 
-- This information should be available on all device sizes.
+- End users should be able to find information about carts opening hours 
 
 Evidence/Observations:
-- Users can upload recipes through the add recipes function
+- The about_us.html page contains opening hours for each cart
 
-![User story 2 evidence screenshot 1](tests/AddRecipe.png)
+![User story 2 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US2.png)
 
 Outcome: Test successful
 
 ---
 
-**3. "As a user I want to be able to edit my recipes so that I can update/amend details after I've submitted them"**
+**3. "As a customer I expect to be able to see what product is available at each cart location"**
 
 Acceptance criteria:
-- End users should be able to edit their recipes after submission 
-- This information should be available on all device sizes.
+- End users should be able to see the products available for each cart 
 
 Evidence/Observations:
-- Users can edit their recipes through the edit recipes function
+- If user selects a cart to order from on the homepage they get a list of available products to order
 
-![User story 3 evidence screenshot 1](tests/EditRecipe.png)
+![User story 3 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US3.png)
 
 Outcome: Test successful
 
 ---
 
-**4. "4. As a user I want to be able to delete my recipes so that I'm in control of my recipe"**
+**4. As a customer I expect to be able to search for items directly"**
 
 Acceptance criteria:
-- End users should be able to deleted their recipes 
-- This alternative means should be available on all device sizes.
+- End users should be able to search the espressOrders site 
 
 Evidence/Observations:
-- Users can delete their recipes from the recipes page
+- Search functionality is accessible on all screens
 
-![User story 4 evidence screenshot 1](tests/DeleteRecipe.png)
+![User story 4 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US4.png)
 
 Outcome: Test successful
 
 ---
 
-**5. "5. As a user I want to find out best practices for campfire cooking so that I can improve my cookery"**
+**5. "As a customer I expect to be able to filter/sort products by their type"**
 
 Acceptance criteria:
-- The website, should give users information on how they should cook the recipes 
-- This information should be available on all device sizes.
+- Users should be able to filter/sort products by their type 
 
 Evidence/Observations:
-- The website gives method steps for each recipe
+- Users can filter by type/category
+
+![User story 5 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US5.png)
 
 Outcome: Test successful
 
 ---
 
-**6. "6. As a user I want to be able to search for recipes so I can quickly find the information I'm looking for"**
+**6. "As a customer I expect to be able to find information about each item"**
 
 Acceptance criteria:
-- The website has search functionality
-- This information should be available on all device sizes.
+- Each product should have information provided about it
 
 Evidence/Observations:
-- The website gives method steps for each recipe
+- Each product has a product_detail.html page
 
-![User story 6 evidence screenshot 1](tests/Search.png)
+![User story 6 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US6.png)
 
 Outcome: Test successful
 
 ---
 
-**7. "7. As a business owner I want to be able to generate increased brand awareness so that my brand becomes synonymous with open fire cooking"**
+**7. "As a customer I expect to be able to customise my order"**
 
 Acceptance criteria:
-- The branding of the company should be clear throughout the website
-- This information should be available on all device sizes.
+- User should be able to alter/customise their order
 
 Evidence/Observations:
-- The website has the Campfire cooking branding, colours and logo throughout
+- Users can alter the quantity and size of each product
+
+![User story 7 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US7.png)
 
 Outcome: Test successful
 
 ---
 
-**8. "8. As a site administrator I want to be able to maintain the user recipe section so I can maintain the quality of the recipes submitted"**
+**8. "As a customer I expect to be able to clearly see the costs of the items and total order before payment"**
 
 Acceptance criteria:
-- The administratorshould be able to edit and remove recipes if required
-- This information should be available on all device sizes.
+- User should be able to see the cost of each item and total order cost
+
 
 Evidence/Observations:
-- When using the administrator account all recipes can be edited and/or deleted
+- The individual item and total order cost is displayed clearly in the basket which user can access at any stage
 
-![User story 8 evidence screenshot 1](tests/RecipesAdminUser.png)
+![User story 8 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US8.png)
+
+Outcome: Test successful
+
+---
+
+**9. "As a customer I expect to be able to pay for my order through the website"**
+
+Acceptance criteria:
+- User should be able to pay for their items through the website
+
+
+Evidence/Observations:
+- Card payments can be taken through Stripe on the website from the checkout page
+
+![User story 9 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US9.png)
+
+Outcome: Test successful
+
+---
+
+**10. "As a customer I expect to be able to save my details to speed up my purchasing experience; I also expect to be able to check out with saving my details"**
+
+Acceptance criteria:
+- User should be able to save their details
+
+
+Evidence/Observations:
+- Registered users have the ability to save their default details to their profile for future use at checkout
+
+![User story 10 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US10.png)
+
+Outcome: Test successful
+
+---
+
+**11. "As a customer I expect to be able to update my details if they have changed since last purchase"**
+
+Acceptance criteria:
+- User should be able to update their details
+
+
+Evidence/Observations:
+- Registered users have the ability to update their default details to their profile for future use at checkout
+
+Outcome: Test successful
+
+---
+
+**12. "As a customer I expect to be able to review my past orders"**
+
+Acceptance criteria:
+- User should be able to review their past order details
+
+
+Evidence/Observations:
+- Registered users have the ability to review their previous orders from the profile section
+
+![User story 12 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US12.png)
+
+Outcome: Test successful
+
+---
+
+**13. "As a customer I expect to be able to keep my personal information secure"**
+
+Acceptance criteria:
+- Only users should have access the personal information
+
+
+Evidence/Observations:
+- Each account is secured using AllAuth templates and each user must register and confirm by email their account. Users are required to login each time to access their account.
+
+Outcome: Test successful
+
+---
+
+**14. "As a business owner I expect to be able to add, edit and remove items from the product range"**
+
+Acceptance criteria:
+- Admin user should be able to add/delete items and amend product details as necessary
+
+
+Evidence/Observations:
+- Admin accounts have access to Product Management function to add products and edit/delete buttons to amend or delete items as required
+
+![User story 14 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US14.png)
+
+Outcome: Test successful
+
+---
+
+**15. "As a business owner I expect to be able to record/store/access all information necessary to take payments for customer orders"**
+
+Acceptance criteria:
+- Administrators would ability to look back on problem orders
+
+
+Evidence/Observations:
+- Admin users can access the orders tables with all the customer information related to an order - it is expected such users would have access to the Stripe dashboard which contains full payment information
+
+Outcome: Test successful
+
+---
+
+**16. "As a business owner I expect to be able to have a means to quickly differentiate between customer orders to ensure each customer gets their order correctly"**
+
+Acceptance criteria:
+- Cart owners need a quick means of checking orders
+
+
+Evidence/Observations:
+- A QR code is generated with each order which could be scanned by the cart vendor at the point of collection
+
+![User story 16 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US16.png)
+
+Outcome: Test successful
+
+---
+
+**17. "As a business owner I expect to be able to be sure that an order is recorded if a user has successfully paid for it (redundancy built in to system)"**
+
+Acceptance criteria:
+- Orders must be placed in database if payment is successful no matter what user does
+
+
+Evidence/Observations:
+- A mechanism (webhook handler.py) has been included to ensure that orders are added to database if payment is successful no matter whether user waits for order confirmation/success page etc
+
+Outcome: Test successful
+
+---
+
+**18. "As a business owner I expect to be able to secure the site so only authorised user can access/edit products"**
+
+Acceptance criteria:
+- Only admin accounts can access/edit products
+
+
+Evidence/Observations:
+- Security features have been included within the code to ensure that no matter how the user tries to access add/edit/delete products pages they will only be successful if they are a registered admin user
+
+Outcome: Test successful
+
+---
+
+**19. "As a business owner I expect to be able to allow users to access relevant socail media channels"**
+
+Acceptance criteria:
+- Site will give access to the owners social media channels
+
+
+Evidence/Observations:
+- Icons located within the footer section allow access to social media
+
+![User story 19 evidence screenshot 1](testing/Screenshot_espressOrders_testing_US19.png)
 
 Outcome: Test successful
 
@@ -442,31 +594,32 @@ The website has been designed to be responsive to different screen sizes. The fo
 
 ## Mobile
 
-- The cards on the recipes pages display singly as expected
-- Image elements on view recipe disappear as expected
-- Sidenav is deployed
+- The items on the products pages display singly as expected
+- Image elements on home page disappear as expected
+- Hamburger menu is deployed
 
 ## Tablet 
 
-- The cards on the recipes pages display in two or three as expected (depends on size of tablet)
-- Sidenav may be deployed (depends on size/orientation of tablet)
+- The cards on the recipes pages display in three as expected 
+- Hamburger may be deployed (depends on size/orientation of tablet)
 
 ---
 
 # **Browser testing**
 The website has been tested on the following browsers:
-- Firefox browser (Version 86.0 (64-bit))
-- Microsoft Edge browser (Version 89.0.774.54 (Official build) (64-bit))
-- Chrome Browser (Version 89.0.4389.90 (Official Build) (64-bit))
+- Firefox browser (Version 92.0.1 (64-bit))
+- Microsoft Edge browser (Version 94.0.992.31 (Official build) (64-bit))
 - Safari Browser
 
 ---
 
 # **Bugs**
-The following bugs were noted during development of the Campfire Cooking website:
-- Delete functionality worked correctly prior to using a modal to confirm the deletion. Once the modal was coded recipes were deleted but it was not the selected recipe but the first recipe from that user. Solution: as the generation of the modal was part of the for loop the modal needed to be created with a unique id to allow deletion of correct recipe.
-- Social media icons were not available on Materialize. Solution: found some custom code which used Font Awesome icons but styled them in similar fashion to the Materialize site
-- Viewing recipes on mobile site made the 4x1 grid to become unreadable. Solution: set media query to operate at lower screen sizes which amends grid to 2x2 and assigned elements to specific positions on the grid to ensure labels and values sit correctly
+The following major bugs were noted during development of the espressOrder website:
+- Once deployed to Heroku migrations which happened locally to sqlite db did not move over to postgresql db. Solution: variables not set correctly within GitPod.
+- Media files did not transfer to AWS bucket as expected whenever static files did. Solution: manual upload of images to AWS bucket
+-Variety of errors caused by use of most recent version of psycogp2. Solution: reverted to older version of pscyogp2 as used in Boutique Ado
+-Issues getting location data stored in the Stripe metadata. Solution: amended code as location was a foreign key and this wasn't accounted for within code
+-Issues with images being displayed correctly. Solution: media processor code was incorrect
 
 ---
 
