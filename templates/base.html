@@ -29,6 +29,24 @@
     {% endblock %}
 
     {% block corejs %}
+    <script>
+        (function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})(
+          'cwr',
+          '9f51be14-8200-416e-a116-7b7d501aa9ee',
+          '1.0.0',
+          'eu-west-2',
+          'https://client.rum.us-east-1.amazonaws.com/1.13.6/cwr.js',
+          {
+            sessionSampleRate: 1,
+            guestRoleArn: "arn:aws:iam::162072697373:role/RUM-Monitor-eu-west-2-162072697373-5837254381861-Unauth",
+            identityPoolId: "eu-west-2:977bddc1-ee18-4aa6-bb87-28a6f44e8651",
+            endpoint: "https://dataplane.rum.eu-west-2.amazonaws.com",
+            telemetries: ["performance","errors","http"],
+            allowCookies: true,
+            enableXRay: false
+          }
+        );
+      </script>
     <script src="https://kit.fontawesome.com/4863a75fd6.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
